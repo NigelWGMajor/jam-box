@@ -1,0 +1,36 @@
+
+header {
+ 
+  .logo {
+    font-weight: bold;
+  }
+  nav {
+    display: flex;
+    margin: 15px;
+    justify-content: space-evenly;
+    ul {
+      background: #0c164b;
+      list-style-type: none;
+
+     
+    }
+    li {
+      float: left;
+      margin: 10;
+      padding: 10;
+
+      a {
+        text-decoration: none;
+
+        color: inherit;
+        padding: 1em;
+        font-size: 0.9em;
+      }
+    }
+    li:hover {
+      color: white;
+      background-color: black;
+      font-weight: 500;
+    }
+  }
+}
