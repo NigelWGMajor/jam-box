@@ -114,3 +114,62 @@ header {
 </p>
 ```
 Now you have a system-wide font ...
+
+Next we cleaned up some display issues so that we would have a dark background to the very edges...
+in app.component template:
+```xml
+<body class="jb-main">
+  <app-navigation class="jb-zone-head"></app-navigation>
+  <section class="jb-zone-middle">
+    <router-outlet></router-outlet>
+  </section>
+</body>
+```
+then in the scsc:
+```css
+:host /deep/ {
+  .jb-main {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background: #000000;
+    color: #cccccc;
+    margin: 0;
+ 
+    }
+    .container {
+        width: 50%;
+        margin: 0 auto;
+        padding: 1.3em;
+        display: grid;
+        grid-template-columns: 30% auto;
+    }
+}
+  .jb-zone-middle {
+    position: absolute;
+    top: 70px;
+       left: 0px; /* Gap left */
+    right: 0; /* Gap right */
+    bottom: 0;
+    background-color: navy;
+  }
+  .jb-zone-head {
+    position: absolute;
+    top: 0px;
+    left: 0px; /* Gap left */
+    right: 0; /* Gap right */
+    height: auto;
+    background-color: navy;
+  }
+  ```
+# Install sqlite3
+`npm install --save-dev sqlite3`
+
+I am adding the "tutorial startup" pieces to the storage.service.ts file.
+That way we can use the database by injecting it into any module.
+
+Look at the storage service file to see what i did!
+
+
+
+
+
+
