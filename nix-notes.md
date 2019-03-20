@@ -168,8 +168,14 @@ That way we can use the database by injecting it into any module.
 
 Look at the storage service file to see what i did!
 
+I also installed a utility, SqlLiteStudio to simplify db setup.
 
+I installed @ngrx:
+`npm install npm install @ngrx/core @ngrx/store @ngrx/effects @ngrx/store-devtools @ngrx/router-store --save`
 
+and also @ngrx/schematics:
+`npm install @ngrx/schematics --save-dev'
 
+This should allow me to automate some of the setup operatins for the store.
 
 
