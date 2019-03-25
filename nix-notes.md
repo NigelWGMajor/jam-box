@@ -174,8 +174,50 @@ I installed @ngrx:
 `npm install npm install @ngrx/core @ngrx/store @ngrx/effects @ngrx/store-devtools @ngrx/router-store --save`
 
 and also @ngrx/schematics:
-`npm install @ngrx/schematics --save-dev'
+`npm install @ngrx/schematics --save-dev`
 
-This should allow me to automate some of the setup operatins for the store.
+This should allow me to automate some of the setup operations for the store.
+So first install verify install (different couyrcse, maybe different subset):
 
+`npm install @ngrx/store @ngrx/effects @ngrx/entity @ngrx/store-devtools --save`
 
+Insert initial state management:
+`ng generate @ngrx/schematics:store State --root --statePath store --module app.module.ts`
+to simplifty the command line, add the @ngrx/schematics to your angular cli:
+`ng config cli.defaultCollection @ngrx/schematics`
+Initial Effects:
+`ng generate effect App --root --module app.module.ts`
+Make an app/model folder for the classes ....
+then we can add model...
+
+`ng generate interface model/user`
+and pad with a few properties
+
+Need actions for login by user (later other stuff too):
+`ng generate action store/actions/user`
+
+Now, the user.actions.ts is populated with an enum, a class for each and export a type.  We also set up the default constructor...
+(look at the file)
+
+Make a reducer in the store folder!
+`ng generate reducer store/reducers/user`
+
+/* ng g directives: (from ng g --help)
+    container
+    directive
+    effect
+    entity
+    enum
+    feature
+    guard
+    interface
+    library
+    module
+    ng-add
+    pipe
+    reducer
+    service
+    serviceWorker
+    store
+    universal
+    */

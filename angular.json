@@ -135,5 +135,8 @@
       }
     }
   },
-  "defaultProject": "jam-box"
+  "defaultProject": "jam-box",
+  "cli": {
+    "defaultCollection": "@ngrx/schematics"
+  }
 }
