@@ -1,3 +1,4 @@
+@import '../colorScheme';
 header {
   .logo {
     font-weight: bold;
@@ -8,7 +9,7 @@ header {
     margin: 15px;
     justify-content: space-evenly;
     ul {
-      background: black;
+      background:$jb-main-background;
       list-style-type: none;
     }
     li {
@@ -18,40 +19,37 @@ header {
 
       a {
         text-decoration: none;
-
         color: inherit;
         padding: 1em;
         font-size: 0.9em;
       }
     }
     li:hover {
-      color: white;
-      background-color: black;
+      color: $jb-nav-active-foreground;
+      background-image: linear-gradient($jb-nav-hover-background1, $jb-nav-hover-background2);
       font-weight: 500;
     }
     .activated {
-      background-color: green;
+      color: $jb-nav-active-foreground;
+      background-image: linear-gradient($jb-nav-active-background1, $jb-nav-active-background2);
     }
   }
-  .logon-icon {
-    font-family: "Material Icons";
-    content: "\e0da";
-  }
-  .action-icon {
-    color: #cccccc;
-    background-color: black;
-
+    .action-icon {
+    margin-top: 20 px;
+    margin-bottom: 20 px;
     margin-left: 8px;
     margin-right: 8px;
   }
   .left-to-right {
     display: flex;
     flex-direction: row;
-    margin: 0px;
-    background: #222222;
+    margin: 4px;
+    background:$jb-main-background;
     ul {
       list-style: none;
       margin: 0;
+      padding: 0;
+      background: $jb-main-background;
     }
     li {
       float: left;
@@ -69,5 +67,16 @@ header {
   }
   .left {
     float: left;
+  }
+  .jb-nav-top {
+    color: $jb-title;
+    background-color: $jb-main-background;
+  }
+  .jb-heading {
+    font-style: italic;
+    font-size: 1.3em;
+  }
+  .jb-page-title {
+    color: $jb-title; 
   }
 }

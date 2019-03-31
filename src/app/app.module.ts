@@ -19,6 +19,7 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from '../environments/environment';
 import { EffectsModule } from '@ngrx/effects';
 import { AppEffects } from './app.effects';
+import { LogonComponent } from './logon/logon.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { AppEffects } from './app.effects';
     MusicComponent,
     StudioComponent,
     ProjectsComponent,
-    ContactComponent
+    ContactComponent,
+    LogonComponent
   ],
   imports: [
     BrowserModule,

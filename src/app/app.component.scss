@@ -1,8 +1,10 @@
+@import './colorScheme';
+
 :host /deep/ {
   .jb-main {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-    background: #000000;
-    color: #cccccc;
+    background: $jb-main-background;
+    color: $jb-title;
     margin: 0;
   }
   .container {
@@ -19,7 +21,8 @@
   left: 0px; /* Gap left */
   right: 0; /* Gap right */
   bottom: 0;
-  background-color: black;
+  background-image: linear-gradient($jb-nav-active-background1, $jb-nav-active-background2);
+
 }
 .jb-zone-head {
   position: absolute;

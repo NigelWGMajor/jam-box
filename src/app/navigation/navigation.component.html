@@ -1,19 +1,19 @@
 <header>
-  <!-- <div class="top-to-bottom">contains the entire navigatin area -->
-    <a routerLink="/contact" class="right">
+  <!-- <div class="top-to-bottom">contains the entire navigation area -->
+    <a routerLink="/contact" class="right jb-nav-top">
       <mat-icon matTooltip="Leave a message for us" 
       class="action-icon">insert_comment</mat-icon>
     </a>
     <div class="left-to-right">
       <ul class="left">
         <li>
-            <a routerLink="/login" >
-               <mat-icon  matTooltip="Click to login" class=" left action-icon">vpn_key</mat-icon>
+            <a routerLink="/logon" >
+               <mat-icon  matTooltip="Click to log on as a player" class="jb-nav-top left action-icon">vpn_key</mat-icon>
             </a>
         <!-- placeholder for future login status, etc. -->
       </li>
       <li>
-        <div matTooltip={{playerMessage}} >Welcome {{user}}!</div>
+        <div class="jb-nav-top jb-heading" matTooltip={{playerMessage}} >Welcome {{user}}!</div>
       </li>
     </ul>
     </div>

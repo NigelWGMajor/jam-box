@@ -15,6 +15,6 @@ export class NavigationComponent implements OnInit {
 
   ngOnInit() {
     this.user = 'Visitor';
-    this.playerMessage = 'In order to make changes you must be log in.  You are welcome to browse';
+    this.playerMessage = 'In order to make changes you must log in.  You are welcome to browse as a visitor.';
   }
 }
