@@ -1,18 +1,15 @@
-
 header {
- 
   .logo {
     font-weight: bold;
   }
   nav {
     display: flex;
+    position: initial;
     margin: 15px;
     justify-content: space-evenly;
     ul {
-      background: #0c164b;
+      background: black;
       list-style-type: none;
-
-     
     }
     li {
       float: left;
@@ -32,5 +29,45 @@ header {
       background-color: black;
       font-weight: 500;
     }
+    .activated {
+      background-color: green;
+    }
+  }
+  .logon-icon {
+    font-family: "Material Icons";
+    content: "\e0da";
+  }
+  .action-icon {
+    color: #cccccc;
+    background-color: black;
+
+    margin-left: 8px;
+    margin-right: 8px;
+  }
+  .left-to-right {
+    display: flex;
+    flex-direction: row;
+    margin: 0px;
+    background: #222222;
+    ul {
+      list-style: none;
+      margin: 0;
+    }
+    li {
+      float: left;
+      margin: 0;
+      margin-right: 10px;
+      padding: 0;
+    }
+  }
+  .top-to-bottom {
+    display: flex;
+    flex-direction: column;
+  }
+  .right {
+    float: right;
+  }
+  .left {
+    float: left;
   }
 }

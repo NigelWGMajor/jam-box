@@ -199,7 +199,7 @@ Need actions for login by user (later other stuff too):
 Now, the user.actions.ts is populated with an enum, a class for each and export a type.  We also set up the default constructor...
 (look at the file)
 
-Make a reducer in the store folder!
+Make a reducer in the store folder for users to handle user actions that are synchronous!
 `ng generate reducer store/reducers/user`
 
 /* ng g directives: (from ng g --help)
@@ -221,3 +221,19 @@ Make a reducer in the store folder!
     store
     universal
     */
+
+Now I want to make a user effect too, as I expect that some user actions will be asynchronous:
+`ng generate effect store/effects/user`
+
+With that in place, it's time to set up a database.
+
+Used sqlite studio to make a Players table with Id, Name, Key and Description. The Key defauts to "1234".
+"Visitor" has an Id of 0, an empty key and the description is "Anonymous Visitor to the site".
+
+We want to modify the startup so that it "logs in" as Vistor initially, and allows the user to log in by providing the key.
+
+It also needs to show us who is logged in of course.
+
+We can simplify our access rules: if the prevailing player id is 0 it is the visitor, otherwise it's a real player.
+
+

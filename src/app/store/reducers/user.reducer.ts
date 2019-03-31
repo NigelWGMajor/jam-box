@@ -1,7 +1,7 @@
 
 import { Action, State } from '@ngrx/store';
 
-import { EUserActions, UserActions } from '../actions/user.actions';
+import { UserActionTypes, UserActions } from '../actions/user.actions';
 import { IUserState, initialUserState } from '../state/user.state';
 
 
@@ -10,25 +10,25 @@ export const userReducers = (
   action: UserActions
 ): IUserState => {
   switch (action.type) {
-    case EUserActions.GetUsers: {
+    case UserActionTypes.GetUsers: {
       return {
         ...state,
         users: action.payload
               };
     }
-    case EUserActions.GetUsersSuccess: {
+    case UserActionTypes.GetUsersSuccess: {
       return {
         ...state,
         users: action.payload
       };
     }
-    case EUserActions.SignInUser: {
+    case UserActionTypes.SignInUser: {
       return {
         ...state,
         selectedUser: action.payload
       };
     }
-    case EUserActions.SignInUserSuccess {
+    case UserActionTypes.SignInUserSuccess: {
       return {
         ...state,
         selectedUser: action.payload
