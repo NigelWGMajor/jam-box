@@ -236,4 +236,20 @@ It also needs to show us who is logged in of course.
 
 We can simplify our access rules: if the prevailing player id is 0 it is the visitor, otherwise it's a real player.
 
+## NEXT:
 
+I have already put the framework in place for all the pages, the main interface, the navigation and the reducers and effects are set up.  I have a provisional layout working although I will want to migrate this to css flex soon. I also migrated the underlying color choices to variables in a ColorScheme at the root of the project. I generated some sample graphics too so I can integrate these too. 
+There is already a sqlite database in place and I have set up a simple table to manage logon information.
+## Code-wise
+- Connect the login page to the service that will provide authentication through an effect;
+- Have the service respond with success or failure to the reducers;
+- Have the state change on a successful log on reflect back to the main screen through an observable.
+
+This will frame out the main functional loops.
+
+## UI-wise
+- Refactor the main page so that the main zones resize correctly at most resolutions;
+- Apply some standard graphics to the main page;
+- Float the main paging buttons over the graphics;
+- Use two-tone and animated icons;
+- Apply some simple animations to provide subtle transitios.
