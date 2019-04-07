@@ -5,9 +5,9 @@
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     background: $jb-edge-background;
     color: $jb-title;
-
   }
 }
+
 body {
   margin: 0;
   padding: 0;
@@ -59,4 +59,12 @@ body {
   bottom: 0;
   left: 0;
   right: 0;
+}
+/deep/ .mat-tooltip {
+  font-size: 1em;
+  font-style: italic;
+  text-align: center;
+  margin: 10px;
+  color: $jb-tooltip-color !important;
+  background: radial-gradient($jb-tooltip-background1 5%,$jb-tooltip-background2 20% , transparent 70%);
 }

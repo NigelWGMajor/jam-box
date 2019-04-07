@@ -29,7 +29,7 @@
         padding-right: 20px;
         padding-bottom: 10px;
         padding-top: 2px;
-        font-size: 0.9em;
+        font-size: 1.1em;
       }
     }
     li:hover {
@@ -43,10 +43,10 @@
     .activated {
       color: $jb-nav-active-foreground;
       background-image: linear-gradient(
-        $jb-nav-active-background1,
-        $jb-nav-active-background2,
-        $jb-nav-active-background3,
-        $jb-nav-active-background3
+        $jb-nav-active-background1 1%,
+        $jb-nav-active-background2 25%,
+        $jb-nav-active-background3 50%,
+        transparent 70%,
       );
       margin-left: 10px;
       margin-right: 10px;
