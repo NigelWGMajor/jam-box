@@ -7,19 +7,17 @@
     color: $jb-title;
 
   }
-
 }
-.jb-zone-middle {
-  position: absolute;
-  top: 100px;
-  left: 0px; /* Gap left */
-  right: 0; /* Gap right */
-bottom: 100px;
-  background-image: linear-gradient($jb-nav-active-background1, $jb-nav-active-background2);
-
+body {
+  margin: 0;
+  padding: 0;
 }
 .jb-screen {
   position: absolute;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
   top: 0px;
   left: 0px; /* Gap left */
   right: 0px; /* Gap right */
@@ -39,7 +37,8 @@ bottom: 100px;
 }
 
 .jb-header {
-   background: blue;
+   padding-top: 10px;
+   background: transparent;
    position: absolute;
    top: 0;
    left: 0;
@@ -49,12 +48,14 @@ bottom: 100px;
   grid-area: nav;
 }
 .jb-major {
-grid-area: major;
+   grid-area: major;
 }
 .jb-footer {
+  padding-top: 10px;
+  padding-bottom: 10px;
   grid-area: footer;
   position: absolute;
-  background: green;
+  background: transparent;
   bottom: 0;
   left: 0;
   right: 0;

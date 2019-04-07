@@ -1,52 +1,77 @@
-@import '../colorScheme';
+@import "../colorScheme";
 
 .jb-navbar {
   margin: 0;
   nav {
     display: flex;
     position: initial;
-    margin: 15px;
+    margin-top: 12px;
+    margin-bottom: 0;
     justify-content: space-evenly;
     ul {
-      background:$jb-main-background;
+      background: $jb-main-background;
       list-style-type: none;
     }
     li {
       float: left;
-      margin: 10;
+      margin-left: 10;
+      margin-right: 10;
+      margin-top: 0;
+      margin-bottom: 2;
       padding: 10;
+      background: $jb-nav-background;
+      border-top-left-radius: 10px;
+      color: $jb-icon;
       a {
         text-decoration: none;
         color: inherit;
-        padding: 1em;
+        padding-left: 20px;
+        padding-right: 20px;
+        padding-bottom: 10px;
+        padding-top: 2px;
         font-size: 0.9em;
       }
     }
     li:hover {
       color: $jb-nav-active-foreground;
-      background-image: linear-gradient($jb-nav-hover-background1, $jb-nav-hover-background2);
-      font-weight: 500;
+
+      //font-weight: 800;
+    }
+    li:left {
+      color: $jb-nav-active-foreground;
     }
     .activated {
       color: $jb-nav-active-foreground;
-      background-image: linear-gradient($jb-nav-active-background1, $jb-nav-active-background2);
+      background-image: linear-gradient(
+        $jb-nav-active-background1,
+        $jb-nav-active-background2,
+        $jb-nav-active-background3,
+        $jb-nav-active-background3
+      );
+      margin-left: 10px;
+      margin-right: 10px;
+      margin-top: 0px;
+      margin-bottom: 2px;
+
+      border-top-left-radius: 9px;
+      border-top-right-radius: 9px;
     }
   }
   .jb-nav-top {
     color: $jb-title;
     background-color: $jb-main-background;
   }
-  }
-  .tight {
-    margin: 0;
-    padding: 0;
-  }
-  .jb-main-image {
-    display: block;
-    width: 70%; 
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 0;
-    margin-bottom: 0;
-  }
-
+}
+.tight {
+  margin: 0;
+  padding: 0;
+}
+.jb-main-image {
+  display: block;
+  width: 70%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 0;
+  margin-bottom: 0;
+  padding: 0;
+}

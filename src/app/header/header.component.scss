@@ -6,14 +6,26 @@
       "logon welcome contact";
     grid-template-rows: auto;
     grid-template-columns: 50px 1fr 50px;justify-items: center;
+    background: transparent;
+    color: $jb-title;
   }
   .jb-icon-contact {
+    margin-top: 5px;
+    margin-right: 15px;
+    color : $jb-icon;
     grid-area: contact;
-
   }
-  area-icon-logon {
+  .jb-icon-logon {
+    margin-top: 5px;
+    margin-left: 15px;
+    color : $jb-icon;
     grid-area: logon ;
   }
-  .jb-top-message {
+  .jb-header-text {
     grid-area: welcome;
-  }
+    font-style: italic;
+    font-size: 0.85em;
+    padding-top: 5px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
