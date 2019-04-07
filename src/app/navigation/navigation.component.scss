@@ -1,8 +1,7 @@
 @import '../colorScheme';
-header {
-  .logo {
-    font-weight: bold;
-  }
+
+.jb-navbar {
+  margin: 0;
   nav {
     display: flex;
     position: initial;
@@ -16,7 +15,6 @@ header {
       float: left;
       margin: 10;
       padding: 10;
-
       a {
         text-decoration: none;
         color: inherit;
@@ -34,49 +32,21 @@ header {
       background-image: linear-gradient($jb-nav-active-background1, $jb-nav-active-background2);
     }
   }
-    .action-icon {
-    margin-top: 20 px;
-    margin-bottom: 20 px;
-    margin-left: 8px;
-    margin-right: 8px;
-  }
-  .left-to-right {
-    display: flex;
-    flex-direction: row;
-    margin: 4px;
-    background:$jb-main-background;
-    ul {
-      list-style: none;
-      margin: 0;
-      padding: 0;
-      background: $jb-main-background;
-    }
-    li {
-      float: left;
-      margin: 0;
-      margin-right: 10px;
-      padding: 0;
-    }
-  }
-  .top-to-bottom {
-    display: flex;
-    flex-direction: column;
-  }
-  .right {
-    float: right;
-  }
-  .left {
-    float: left;
-  }
   .jb-nav-top {
     color: $jb-title;
     background-color: $jb-main-background;
   }
-  .jb-heading {
-    font-style: italic;
-    font-size: 1.3em;
   }
-  .jb-page-title {
-    color: $jb-title; 
+  .tight {
+    margin: 0;
+    padding: 0;
   }
-}
+  .jb-main-image {
+    display: block;
+    width: 70%; 
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+

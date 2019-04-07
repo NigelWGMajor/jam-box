@@ -1,1 +1,19 @@
 @import '../colorScheme';
+
+.jb-top-bar {
+    display: grid;
+    grid-template-areas: 
+      "logon welcome contact";
+    grid-template-rows: auto;
+    grid-template-columns: 50px 1fr 50px;justify-items: center;
+  }
+  .jb-icon-contact {
+    grid-area: contact;
+
+  }
+  area-icon-logon {
+    grid-area: logon ;
+  }
+  .jb-top-message {
+    grid-area: welcome;
+  }
