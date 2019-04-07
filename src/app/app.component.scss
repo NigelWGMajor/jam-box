@@ -3,32 +3,59 @@
 :host /deep/ {
   .jb-main {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-    background: $jb-main-background;
+    background: $jb-edge-background;
     color: $jb-title;
-    margin: 0;
+
   }
-  .container {
-    width: 50%;
-    margin: 0 auto;
-    padding: 1.3em;
-    display: grid;
-    grid-template-columns: 30% auto;
-  }
+
 }
 .jb-zone-middle {
   position: absolute;
   top: 100px;
   left: 0px; /* Gap left */
   right: 0; /* Gap right */
-  bottom: 0;
+bottom: 100px;
   background-image: linear-gradient($jb-nav-active-background1, $jb-nav-active-background2);
 
 }
-.jb-zone-head {
+.jb-screen {
   position: absolute;
   top: 0px;
   left: 0px; /* Gap left */
-  right: 0; /* Gap right */
-  height: auto;
-  background-color: black;
+  right: 0px; /* Gap right */
+  bottom: 0px;
+  background: $jb-main-background;
+}
+.jb-layout {
+  display: grid;
+  grid-template-areas:
+   "header header"
+    "nav nav"
+    "major major"
+    "footer footer";
+  grid-template-rows: auto, auto, 3fr, auto;
+  grid-template-columns: 1fr, 1fr, 1fr, 1fr, 1fr;
+  bottom: 0px;
+}
+
+.jb-header {
+   background: blue;
+   position: absolute;
+   top: 0;
+   left: 0;
+   right: 0;
+}
+.jb-nav {
+  grid-area: nav;
+}
+.jb-major {
+grid-area: major;
+}
+.jb-footer {
+  grid-area: footer;
+  position: absolute;
+  background: green;
+  bottom: 0;
+  left: 0;
+  right: 0;
 }

@@ -20,6 +20,8 @@ import { environment } from '../environments/environment';
 import { EffectsModule } from '@ngrx/effects';
 import { AppEffects } from './app.effects';
 import { LogonComponent } from './logon/logon.component';
+import { HeaderComponent } from './header/header.component';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +33,9 @@ import { LogonComponent } from './logon/logon.component';
     StudioComponent,
     ProjectsComponent,
     ContactComponent,
-    LogonComponent
+    LogonComponent,
+    HeaderComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,

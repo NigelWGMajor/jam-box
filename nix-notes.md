@@ -236,6 +236,59 @@ It also needs to show us who is logged in of course.
 
 We can simplify our access rules: if the prevailing player id is 0 it is the visitor, otherwise it's a real player.
 
+## CSS Grid:
+
+I want the layout to switch easily by zone for different orientations.  Primarily I expect to have a "normal" landscape mode (e.g. 1920 * 1080), a half-monitor (e.g. 960 * 1080) and perhaps a skinny mode for phones (e.g. 640 * 1080).  I'd like the page to be responsive around these at least.
+
+I would like to set this up at he outset so that I am able to test this begore I start messing with content.
+
+I intend doing this with css grid: I can set up styles base on different media.
+
+I find it easier to visualize in functional zones:
+- H: Header is a strip along the top that can be used for titles, messages and "universal" controls (probably in the corners) for things like login, settings, contact ... this should always be accessible, but does not take up much room.
+- B: Banner is an area for a horizontal graphical strip.  This is intended as a visual anchor, a ststic content element that test the tone of the site, and provides a backdrop to the actual navigation controls
+- C: Context switches are possibly overlaid over the banner, and provide switching between different contextss. These navigation controls are used to access all the main portions of the site.  This should always be available unless in some semi-modal operation.
+- T: Title info.
+- P: Pager is an area that can provide additional information on the current page, perhaps also navigating or power-scrolling the page.  Inlike the banner, this is typically organized vertically and is concise and narrow.
+- S: Split is a vertical separator, possibly graphical, that separates the summary from the main content area.  It might overlap with the summary.
+- M: Main pPanel is the main content area.  This should be scrollable as appropriate, possibly power-driven by the summary.
+- F: Footer is a strip across the bottom that can be used for status messages.
+
+| - - - - - - - - - - - - - - - - - - - - - - |      | - - - - - - - - - - - - - |
+|               header                        |      |         header            |
+| - - - XXX - - - - - - - - - - - - - - - - - |      | - - - - - - - - - - - - - |
+|       XXX   banner/context                  |      |       banner/context      |
+| - - - XXX - - - - - - - - - - - - - - - - - |      | - - - - - - - - - - - - - |
+| Title XXX::::::::::::::::::::::::::::::::::||      | Title                     |
+| - - - XXX::::::::::::::::::::::::::::::::::||      |::::::::::::::::::::::::::||
+| Pager XXX::::::::::::::::::::::::::::::::::||      |::::::::::::::::::::::::::||
+|       XXX::::::::::::::::::::::::::::::::::||      |::::::::::::::::::::::::::||
+| - - - XXX - - - - - - - - - - - - - - - - - |      |::::::::::::::::::::::::::||
+|             footer                          |      |::::::::::::::::::::::::::||
+| - - - - - - - - - - - - - - - - - - - - - - |      |::::::::::::::::::::::::::||
+                                                     |::::::::::::::::::::::::::||
+                                                     |::::::::::::::::::::::::::||
+                                                     |::::::::::::::::::::::::::||
+                                                     | - - - - - - - - - - - - - |
+                                                     |        footer             |
+                                                     | - - - - - - - - - - - - - |
+
+This translates to grid template:
+Wide:                                                Narrowest:
+header header header header                          header header header
+  .    split  banner banner                          title  banner banner
+title  split  major  major                           macro  macro  macro
+macro  split  major  major                           major  major  major
+footer footer footer footer                          footer footer footer
+
+Middle:                                                     
+header header header 
+split  title  banner banner
+split  macro  major  major
+footer footer footer
+
+Let's apply this to the scss for the main page!
+ 
 ## NEXT:
 
 I have already put the framework in place for all the pages, the main interface, the navigation and the reducers and effects are set up.  I have a provisional layout working although I will want to migrate this to css flex soon. I also migrated the underlying color choices to variables in a ColorScheme at the root of the project. I generated some sample graphics too so I can integrate these too. 
