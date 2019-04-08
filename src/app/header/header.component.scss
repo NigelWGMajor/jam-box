@@ -20,7 +20,7 @@
   color: $jb-icon;
 
   :hover {
-    color: $jb-action-hover;
+    color: $jb-nav-hover-foreground;
   }
 }
 
@@ -34,7 +34,7 @@
   color: $jb-icon;
 
   :hover {
-    color: $jb-action-hover;
+    color: $jb-nav-hover-foreground;
   }
 }
 
@@ -48,7 +48,7 @@
 }
 
 .activated {
-  color: $jb-nav-active-foreground;
+  color: $jb-title;
   background: #222222;
   border: 1px;
   border-style: outset;

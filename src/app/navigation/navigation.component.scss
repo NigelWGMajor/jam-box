@@ -21,7 +21,7 @@
       padding: 10;
       background: $jb-nav-background;
       border-top-left-radius: 10px;
-      color: $jb-icon;
+      color: $jb-nav-inactive-foreground;
       a {
         text-decoration: none;
         color: inherit;
@@ -32,16 +32,13 @@
         font-size: 1.1em;
       }
     }
-    li:hover {
+    li:hover /*& :not(.activated)*/ {
       color: $jb-nav-hover-foreground;
-
       //font-weight: 800;
     }
-    li:left {
-      color: $jb-nav-active-foreground;
-    }
+   
     .activated {
-      color: $jb-nav-active-foreground;
+      color: $jb-title !important; 
       background: #222222;
       border: 1px;
       border-style: outset;
@@ -49,7 +46,7 @@
     }
   }
   .jb-nav-top {
-    color: $jb-title;
+    color: $jb-nav-inactive-foreground;
     background-color: $jb-main-background;
   }
 }
