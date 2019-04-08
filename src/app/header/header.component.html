@@ -1,11 +1,11 @@
 <header>
   <div class="jb-top-bar" >
-    <a routerLink="/contact" class="jb-icon-contact">
-      <mat-icon matTooltip="Leave a message for us" class="action-icon">insert_comment</mat-icon>
-    </a>
     <div class="jb-header-text" matTooltip={{playerMessage}}>Welcome {{user}}!</div>
-    <a routerLink="/logon">
-      <mat-icon matTooltip="Click to log on as a player" class="jb-icon-logon">vpn_key</mat-icon>
+    <a routerLink="/logon"routerLinkActive="activated" class="jb-icon-logon">
+      <mat-icon matTooltip="Click to log on as a player" >vpn_key</mat-icon>
+    </a>
+    <a routerLink="/contact" routerLinkActive="activated" class="jb-icon-contact">
+      <mat-icon matTooltip="Leave a message for us">insert_comment</mat-icon>
     </a>
   </div>
 </header>

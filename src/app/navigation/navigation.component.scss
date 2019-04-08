@@ -42,19 +42,10 @@
     }
     .activated {
       color: $jb-nav-active-foreground;
-      background-image: linear-gradient(
-        $jb-nav-active-background1 1%,
-        $jb-nav-active-background2 25%,
-        $jb-nav-active-background3 50%,
-        transparent 70%,
-      );
-      margin-left: 10px;
-      margin-right: 10px;
-      margin-top: 0px;
-      margin-bottom: 2px;
-
-      border-top-left-radius: 9px;
-      border-top-right-radius: 9px;
+      background: #222222;
+      border: 1px;
+      border-style: outset;
+      border-color: #444444;
     }
   }
   .jb-nav-top {
