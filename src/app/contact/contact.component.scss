@@ -1,0 +1,15 @@
+@import "../colorScheme";
+.context {
+	float: left;
+	width: 300px;
+	position: fixed;
+	margin-left: 0;
+	margin-top: 0;
+	margin-bottom: 0;
+	width: 150px;
+	background: $jb-main-background; 
+}
+.flow {
+	 margin-left: 150px;
+	 background: $jb-main-background; 
+}

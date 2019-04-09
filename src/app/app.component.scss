@@ -23,6 +23,7 @@ body {
   right: 0px; /* Gap right */
   bottom: 0px;
   background: $jb-main-background;
+ 
 }
 .jb-layout {
   display: grid;
@@ -34,21 +35,25 @@ body {
   grid-template-rows: auto, auto, 3fr, auto;
   grid-template-columns: 1fr, 1fr, 1fr, 1fr, 1fr;
   bottom: 0px;
+ 
 }
 
 .jb-header {
+  position: fixed;
    padding-top: 10px;
    background: transparent;
    position: absolute;
    top: 0;
    left: 0;
    right: 0;
+ 
 }
 .jb-nav {
   grid-area: nav;
 }
 .jb-major {
    grid-area: major;
+   overflow-y: visible;
 }
 .jb-footer {
   padding-top: 10px;
