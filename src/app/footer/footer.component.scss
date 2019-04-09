@@ -1,6 +1,7 @@
 @import "../colorScheme";
 .jb-footer {
     padding: 2px;
+    margin-bottom:8px;
     color: $jb-title;
     background-image: linear-gradient($jb-footer-background1, $jb-footer-background2, $jb-footer-background2);
 }

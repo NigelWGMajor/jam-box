@@ -14,11 +14,11 @@
     }
     li {
       float: left;
-      margin-left: 10;
-      margin-right: 10;
-      margin-top: 0;
-      margin-bottom: 2;
-      padding: 10;
+      margin-left: 6px;
+      margin-right: 6px;
+      margin-top: 4px;
+      margin-bottom: 2px;
+      padding: 3px;
       background: $jb-nav-background;
       border-top-left-radius: 10px;
       color: $jb-nav-inactive-foreground;
@@ -27,8 +27,8 @@
         color: inherit;
         padding-left: 20px;
         padding-right: 20px;
-        padding-bottom: 10px;
-        padding-top: 2px;
+        padding-bottom: 5px;
+        padding-top: 5px;
         font-size: 1.1em;
       }
     }
