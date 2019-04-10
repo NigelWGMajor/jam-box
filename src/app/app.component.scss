@@ -1,34 +1,103 @@
+@import "./globals";
+
 :host /deep/ {
   .jb-main {
+    // needed to allow children to position absolutely:
+   
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-    background: #000000;
-    color: #cccccc;
+    background: $jb-edge-background;
+    color: $jb-font-normal;
+    overflow: hidden;
+    z-index: 0;
+    margin: 0px;
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
     margin: 0;
- 
-    }
-    .container {
-        width: 50%;
-        margin: 0 auto;
-        padding: 1.3em;
-        display: grid;
-        grid-template-columns: 30% auto;
-    }
+    padding: 0;
+  }
 }
-  .jb-zone-middle {
-    position: absolute;
-    top: 70px;
-       left: 0px; /* Gap left */
-    right: 0; /* Gap right */
-    bottom: 0;
-    background-color: navy;
-  }
-  .jb-zone-head {
-    position: absolute;
-    top: 0px;
-    left: 0px; /* Gap left */
-    right: 0; /* Gap right */
-    height: auto;
-    background-color: navy;
-  }
+.jb-main { // this is the outermost frame
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
 
+}
 
+.jb-layout {
+  // Positions the main elements for multiple media.
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: grid;
+  z-index: 20;
+  padding-top: $jb-edge;
+  padding-right: $jb-edge;
+  padding-bottom: $jb-edge;
+  padding-left: $jb-edge;
+  grid-template-areas:
+    "header header"
+    "nav nav"
+    "major major"
+    "footer footer";
+    grid-template-rows: $jb-header-height $jb-navbar-height 1fr $jb-footer-height;
+   grid-template-columns: 1fr 1fr;
+}
+.jb-header {
+  grid-area: header;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  
+  z-index: 100;
+}
+.jb-nav {
+  grid-area: nav;
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  margin: 0;
+  background: transparent;
+  z-index: 100;
+}
+.jb-major {
+   position: absolute;
+   top: 0;
+   right: 0;
+   left: 0;
+   bottom: 0;
+   z-index: -100; //!
+
+  grid-area: major;
+  overflow: visible;
+  z-index: 0;
+  
+  //height: auto;
+}
+.jb-footer {
+  grid-area: footer;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: auto;
+  z-index: 100;
+}
+/deep/ .mat-tooltip {
+  font-size: 1em;
+  font-style: italic;
+  text-align: center;
+  margin: 10px;
+  color: $jb-tooltip-color !important;
+  background: radial-gradient($jb-tooltip-background1 5%, $jb-tooltip-background2 20%, transparent 70%);
+}

@@ -1,17 +1,21 @@
-<header>
-  <div>
-    <!-- placeholder for future login status, etc. -->
-    <div><i>Welcome!</i></div>
-    <!-- this is the navigation bar -->
-    <nav>
-      <ul>
-        <li><a routerLink="/">Home</a></li>
-        <li><a routerLink="/schedule">Schedule</a></li>
-        <li><a routerLink="/music">Music</a></li>
-        <li><a routerLink="/studio">Studio</a></li>
-        <li><a routerLink="/projects">Projects</a></li>
-        <li><a routerLink="/contact">Contact</a></li>
-      </ul>
-    </nav>
+<body >
+  <div class="jb-nav-bar">
+
+    <ul class="jb-nav-top">
+      <li><a routerLink="/home" routerLinkActive="activated" matTooltip="The initial page"
+        matTooltipClass="jb-tooltip">Home</a></li>
+        <li><a routerLink="/schedule" routerLinkActive="activated"
+          matTooltip="Availability of band members and venues">Schedule</a></li>
+          <li><a routerLink="/music" routerLinkActive="activated" matTooltip="Song lists, set lists and music">Music</a>
+          </li>
+    <li><a routerLink="/studio" routerLinkActive="activated" matTooltip="Information on the studio equipment">Studio</a>
+    </li>
+    <li><a routerLink="/projects" routerLinkActive="activated"
+      matTooltip="Designs, program code and configuration">Projects</a></li>
+    </ul>
   </div>
-</header>
+  <div class="jb-image-frame">
+    <img class="jb-main-image"
+    src="assets/img/keyboard02.png" >
+  </div>
+  </body>

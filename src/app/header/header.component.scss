@@ -1,0 +1,65 @@
+@import '../globals';
+
+body {
+  position: absolute;
+  top: 0;bottom: 0;left: 0;right: 0;
+  margin: 0;
+  padding: 0;
+  background: $jb-main-background;
+}
+.jb-header{ // this is the entire top bar
+  display: grid;
+  grid-template-areas: "logon welcome contact";
+  grid-template-rows: 100;
+  grid-template-columns: auto 1fr auto;
+  justify-items: center;
+  background: $jb-main-background;
+  color: $jb-font-highlight;
+}
+
+.jb-icon-contact { // icon on right
+  grid-area: contact;
+  margin: 0;
+  padding-top: $jb-icon-pad-y;
+  padding-right: $jb-icon-pad-x;
+  padding-bottom: $jb-icon-pad-y;
+  padding-left: $jb-icon-pad-x;
+  color: $jb-icon;
+
+  :hover {
+    color: $jb-nav-hover-foreground;
+  }
+}
+
+.jb-icon-logon { //icon on left
+  grid-area: logon;
+  margin: 0;
+  padding-top: $jb-icon-pad-y;
+  padding-left: $jb-icon-pad-x;
+  padding-bottom: $jb-icon-pad-y;
+  padding-right: $jb-icon-pad-x;
+  color: $jb-icon;
+
+  :hover {
+    color: $jb-nav-hover-foreground;
+  }
+}
+
+.jb-header-text { // mesge in the middle
+  grid-area: welcome;
+  font-style: italic;
+  font-size: .85em;
+  margin-top: $jb-icon-pad-y;
+  padding-top: $jb-icon-pad-y;
+  padding-left: $jb-icon-pad-x;
+  padding-bottom: $jb-icon-pad-y;
+  padding-right: $jb-icon-pad-x;
+}
+
+.activated {
+  color: $jb-font-highlight;
+  background: #222222;
+  border: 1px;
+  border-style: outset;
+  border-color: #444444;
+}

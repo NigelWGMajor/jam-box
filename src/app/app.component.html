@@ -1,6 +1,10 @@
-<body class="jb-main">
-  <app-navigation class="jb-zone-head"></app-navigation>
-  <section class="jb-zone-middle">
-    <router-outlet></router-outlet>
-  </section>
-</body>
+<div class="jb-main">
+    <div class="jb-layout">
+      <app-header class="jb-header"></app-header>
+      <app-navigation class="jb-nav"></app-navigation>
+      <div class="jb-major">
+        <router-outlet ></router-outlet>
+      </div>
+      <app-footer class="jb-footer"></app-footer>
+    </div>
+</div>

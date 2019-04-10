@@ -174,8 +174,135 @@ I installed @ngrx:
 `npm install npm install @ngrx/core @ngrx/store @ngrx/effects @ngrx/store-devtools @ngrx/router-store --save`
 
 and also @ngrx/schematics:
-`npm install @ngrx/schematics --save-dev'
+`npm install @ngrx/schematics --save-dev`
 
-This should allow me to automate some of the setup operatins for the store.
+This should allow me to automate some of the setup operations for the store.
+So first install verify install (different couyrcse, maybe different subset):
 
+`npm install @ngrx/store @ngrx/effects @ngrx/entity @ngrx/store-devtools --save`
 
+Insert initial state management:
+`ng generate @ngrx/schematics:store State --root --statePath store --module app.module.ts`
+to simplifty the command line, add the @ngrx/schematics to your angular cli:
+`ng config cli.defaultCollection @ngrx/schematics`
+Initial Effects:
+`ng generate effect App --root --module app.module.ts`
+Make an app/model folder for the classes ....
+then we can add model...
+
+`ng generate interface model/user`
+and pad with a few properties
+
+Need actions for login by user (later other stuff too):
+`ng generate action store/actions/user`
+
+Now, the user.actions.ts is populated with an enum, a class for each and export a type.  We also set up the default constructor...
+(look at the file)
+
+Make a reducer in the store folder for users to handle user actions that are synchronous!
+`ng generate reducer store/reducers/user`
+
+/* ng g directives: (from ng g --help)
+    container
+    directive
+    effect
+    entity
+    enum
+    feature
+    guard
+    interface
+    library
+    module
+    ng-add
+    pipe
+    reducer
+    service
+    serviceWorker
+    store
+    universal
+    */
+
+Now I want to make a user effect too, as I expect that some user actions will be asynchronous:
+`ng generate effect store/effects/user`
+
+With that in place, it's time to set up a database.
+
+Used sqlite studio to make a Players table with Id, Name, Key and Description. The Key defauts to "1234".
+"Visitor" has an Id of 0, an empty key and the description is "Anonymous Visitor to the site".
+
+We want to modify the startup so that it "logs in" as Vistor initially, and allows the user to log in by providing the key.
+
+It also needs to show us who is logged in of course.
+
+We can simplify our access rules: if the prevailing player id is 0 it is the visitor, otherwise it's a real player.
+
+## CSS Grid:
+
+I want the layout to switch easily by zone for different orientations.  Primarily I expect to have a "normal" landscape mode (e.g. 1920 * 1080), a half-monitor (e.g. 960 * 1080) and perhaps a skinny mode for phones (e.g. 640 * 1080).  I'd like the page to be responsive around these at least.
+
+I would like to set this up at he outset so that I am able to test this begore I start messing with content.
+
+I intend doing this with css grid: I can set up styles base on different media.
+
+I find it easier to visualize in functional zones:
+- H: Header is a strip along the top that can be used for titles, messages and "universal" controls (probably in the corners) for things like login, settings, contact ... this should always be accessible, but does not take up much room.
+- B: Banner is an area for a horizontal graphical strip.  This is intended as a visual anchor, a ststic content element that test the tone of the site, and provides a backdrop to the actual navigation controls
+- C: Context switches are possibly overlaid over the banner, and provide switching between different contextss. These navigation controls are used to access all the main portions of the site.  This should always be available unless in some semi-modal operation.
+- T: Title info.
+- P: Pager is an area that can provide additional information on the current page, perhaps also navigating or power-scrolling the page.  Inlike the banner, this is typically organized vertically and is concise and narrow.
+- S: Split is a vertical separator, possibly graphical, that separates the summary from the main content area.  It might overlap with the summary.
+- M: Main pPanel is the main content area.  This should be scrollable as appropriate, possibly power-driven by the summary.
+- F: Footer is a strip across the bottom that can be used for status messages.
+
+| - - - - - - - - - - - - - - - - - - - - - - |      | - - - - - - - - - - - - - |
+|               header                        |      |         header            |
+| - - - XXX - - - - - - - - - - - - - - - - - |      | - - - - - - - - - - - - - |
+|       XXX   banner/context                  |      |       banner/context      |
+| - - - XXX - - - - - - - - - - - - - - - - - |      | - - - - - - - - - - - - - |
+| Title XXX::::::::::::::::::::::::::::::::::||      | Title                     |
+| - - - XXX::::::::::::::::::::::::::::::::::||      |::::::::::::::::::::::::::||
+| Pager XXX::::::::::::::::::::::::::::::::::||      |::::::::::::::::::::::::::||
+|       XXX::::::::::::::::::::::::::::::::::||      |::::::::::::::::::::::::::||
+| - - - XXX - - - - - - - - - - - - - - - - - |      |::::::::::::::::::::::::::||
+|             footer                          |      |::::::::::::::::::::::::::||
+| - - - - - - - - - - - - - - - - - - - - - - |      |::::::::::::::::::::::::::||
+                                                     |::::::::::::::::::::::::::||
+                                                     |::::::::::::::::::::::::::||
+                                                     |::::::::::::::::::::::::::||
+                                                     | - - - - - - - - - - - - - |
+                                                     |        footer             |
+                                                     | - - - - - - - - - - - - - |
+
+This translates to grid template:
+Wide:                                                Narrowest:
+header header header header                          header header header
+  .    split  banner banner                          title  banner banner
+title  split  major  major                           macro  macro  macro
+macro  split  major  major                           major  major  major
+footer footer footer footer                          footer footer footer
+
+Middle:                                                     
+header header header 
+split  title  banner banner
+split  macro  major  major
+footer footer footer
+
+Let's apply this to the scss for the main page!
+ 
+## NEXT:
+
+I have already put the framework in place for all the pages, the main interface, the navigation and the reducers and effects are set up.  I have a provisional layout working although I will want to migrate this to css flex soon. I also migrated the underlying color choices to variables in a ColorScheme at the root of the project. I generated some sample graphics too so I can integrate these too. 
+There is already a sqlite database in place and I have set up a simple table to manage logon information.
+## Code-wise
+- Connect the login page to the service that will provide authentication through an effect;
+- Have the service respond with success or failure to the reducers;
+- Have the state change on a successful log on reflect back to the main screen through an observable.
+
+This will frame out the main functional loops.
+
+## UI-wise
+- Refactor the main page so that the main zones resize correctly at most resolutions;
+- Apply some standard graphics to the main page;
+- Float the main paging buttons over the graphics;
+- Use two-tone and animated icons;
+- Apply some simple animations to provide subtle transitios.

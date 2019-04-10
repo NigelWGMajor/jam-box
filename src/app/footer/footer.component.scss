@@ -1,0 +1,15 @@
+@import "../globals";
+.jb-footer {
+  padding-top: $jb-icon-pad-y;
+  padding-right: $jb-icon-pad-x;
+  padding-bottom: $jb-icon-pad-y;
+  padding-left: $jb-icon-pad-x;
+  margin: 0;
+  background-image: linear-gradient($jb-footer-background1, $jb-footer-background2, $jb-footer-background2);
+}
+.jb-footer-text {
+  font-style: italic;
+  font-size: 0.85em;
+  color: $jb-font-highlight;
+  padding: 0;
+}
