@@ -24,12 +24,14 @@
     margin-bottom: 0;
     width: 150px;
 	background: transparent;
+	color: $jb-font-highlight;
 	overflow: auto;
   }
   .flow {
     grid-area: flow;
     overflow: auto;
     margin-left: 150px;
-    background: green; //$jb-main-background;
+	background: transparent;
+	color: $jb-icon;
   }
 }

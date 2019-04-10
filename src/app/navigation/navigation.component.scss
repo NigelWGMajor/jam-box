@@ -2,36 +2,31 @@
 .jb-nav-bar {
   margin: 0;
   padding: 0;
-  position: absolute;
-  top: 0;
+  position: fixed;
+  top: 100;
   right: 0;
   left: 0;
   margin: 0;
-  background: #887766;
+  background: transparent;
   display: grid;
+  grid-template-names:
+  ". menu ."
+  "image image image";
   grid-template-rows: auto, 100px;
-  min-width: 500px;
   justify-content: center;
-  overflow: hidden;
   .jb-nav-top {
-    // the action list
-    // position: absolute;
-    // top: 0;
-    // left: 0;
-    // bottom: 0;
-    // right: 0;
     margin: 0;
-    grid-row: 1/2;
+    grid-name: menu;
     display: flex;
-    
-   
+    flex-wrap: wrap;
     min-width: 300px;
-    background: $jb-main-background;
+    background: transparent; //$jb-main-background;
     list-style-type: none;
     justify-content: space-evenly;
-      align-content: center;
+    align-content: center;
     li {
-      float: left;
+      flex: 1, 1, 70px;
+      //float: left;
       margin-left: 6px;
       margin-right: 6px;
       margin-top: 4px;
@@ -54,7 +49,7 @@
       //font-weight: 800;
     }
     .activated {
-      color: $jb-title !important;
+      color: $jb-font-highlight !important;
       background: #222222;
       border: 1px;
       border-style: outset;
@@ -62,18 +57,25 @@
     }
   }
 }
-.jb-main-image {
-  display: block;
-  grid-row: 2/3;
-  height: 100px;
-  margin-left: 0;
-  margin-right: 0;
-  margin-top: 0;
-  margin-bottom: $jb-edge;
-  padding: 0;
+.jb-image-frame {
+width: 95%;
+  .jb-main-image {
+   display:block;
 
+    max-height: 120px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 0;
+    margin-bottom: $jb-edge;
+    
+  }
 }
 body {
   margin: 0;
   padding: 0;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
 }

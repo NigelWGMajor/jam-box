@@ -2,11 +2,11 @@
 
 :host /deep/ {
   .jb-main {
-    // needed to allow children to positin absolutely:
+    // needed to allow children to position absolutely:
    
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-    // background: $jb-edge-background;
-    // color: $jb-title;
+    background: $jb-edge-background;
+    color: $jb-font-normal;
     overflow: hidden;
     z-index: 0;
     margin: 0px;
@@ -37,7 +37,6 @@
   left: 0;
   display: grid;
   z-index: 20;
-  background: #443322; //!
   padding-top: $jb-edge;
   padding-right: $jb-edge;
   padding-bottom: $jb-edge;
@@ -68,7 +67,7 @@
   left: 0;
   bottom: 0;
   margin: 0;
-  background: pink;
+  background: transparent;
   z-index: 100;
 }
 .jb-major {
@@ -78,12 +77,11 @@
    left: 0;
    bottom: 0;
    z-index: -100; //!
-  
- // padding-top: $jb-header-height + $jb-navbar-height + $jb-image-height;
+
   grid-area: major;
   overflow: visible;
   z-index: 0;
-  background: maroon;
+  
   //height: auto;
 }
 .jb-footer {
