@@ -1,37 +1,83 @@
 @import "../globals";
 .jb-contact {
-	position: absolute;
-	top: 0;
-	bottom: 0;
-	left: 0;
-	right: 0;
-
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: 0;
   display: grid;
-  grid-template-areas: 
-	"context flow";
-	grid-template-columns: minmax($jb-context-width-min, auto) minmax(200, auto);
-	grid-template-rows: 100%;
+  grid-template-areas: "context flow";
+  grid-template-columns: minmax($jb-context-width-min, auto) minmax(200, auto);
+  grid-template-rows: 100%;
   .context {
     grid-area: context;
     width: auto;
-	position: absolute;
-	top: 0;
-	bottom: 0;
-	left: 0;
-	right: 0;
+    position: absolute;
+    top: 17px;
+    bottom: 0;
+    left: 0;
+    right: 0;
     margin-left: 0;
     margin-top: 0;
     margin-bottom: 0;
-    width: 150px;
-	background: transparent;
-	color: $jb-font-highlight;
-	overflow: auto;
+		min-width: $jb-context-width-min;
+		max-width: $jb-context-width-max;
+    background: transparent;
+    color: $jb-font-highlight;
+		overflow-y: auto;
+		ul {margin: 0;
+			display: flex;
+			flex-direction: column;
+			list-style: none;
+			padding: 0;
+			li {margin: 0;
+				border-color: #444444;
+			
+				border-bottom-style: ridge;
+			  border-width: 1px 0;
+				//float: left;
+				// margin-left: 6px;
+				// margin-right: 6px;
+				// margin-top: 4px;
+				// margin-bottom: 2px;
+				padding: 3px;
+				background: $jb-nav-background;
+				color: $jb-font-highlight;
+				
+				a {
+					text-decoration: none;
+					color: inherit;
+					// padding-left: 20px;
+					// padding-right: 20px;
+					// padding-bottom: 5px;
+					// padding-top: 5px;
+					font-size: 0.91em;
+					font-weight: 200;
+				}
+			}
+			li:hover /*& :not(.activated)*/ {
+				color: $jb-nav-hover-foreground;
+				//font-weight: 800;
+			}
+			
+		}
   }
   .flow {
     grid-area: flow;
     overflow: auto;
     margin-left: 150px;
-	background: transparent;
-	color: $jb-icon;
+    background: transparent;
+    color: $jb-icon;
   }
+}
+body {
+	margin: 0;
+}
+.activated {
+	color: $jb-font-highlight !important;
+	background: #222222;
+	border: 1px;
+	border-style: outset;
+	border-color: #444444;
 }
