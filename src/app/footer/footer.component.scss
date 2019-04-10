@@ -1,16 +1,15 @@
 @import "../globals";
 .jb-footer {
-    padding: 2px;
-    margin-bottom:8px;
-    color: $jb-title;
-    background-image: linear-gradient($jb-footer-background1, $jb-footer-background2, $jb-footer-background2);
+  padding-top: $jb-icon-pad-y;
+  padding-right: $jb-icon-pad-x;
+  padding-bottom: $jb-icon-pad-y;
+  padding-left: $jb-icon-pad-x;
+  margin: 0;
+  background-image: linear-gradient($jb-footer-background1, $jb-footer-background2, $jb-footer-background2);
 }
 .jb-footer-text {
-    font-style: italic;
-    font-size: 0.85em;
-    padding-top: 5px;
-    padding-left: 15px;
-    padding-right: 15px;
+  font-style: italic;
+  font-size: 0.85em;
+  color: $jb-title;
+  padding: 0;
 }
-
-

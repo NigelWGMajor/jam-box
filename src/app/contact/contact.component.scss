@@ -1,15 +1,35 @@
 @import "../globals";
-.context {
-	float: left;
-	width: 300px;
-	position: fixed;
-	margin-left: 0;
-	margin-top: 0;
-	margin-bottom: 0;
-	width: 150px;
-	background: $jb-main-background; 
-}
-.flow {
-	 margin-left: 150px;
-	 background: $jb-main-background; 
+.jb-contact {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+
+  display: grid;
+  grid-template-areas: 
+	"context flow";
+	grid-template-columns: minmax($jb-context-width-min, auto) minmax(200, auto);
+	grid-template-rows: 100%;
+  .context {
+    grid-area: context;
+    width: auto;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+    margin-left: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+    width: 150px;
+	background: transparent;
+	overflow: auto;
+  }
+  .flow {
+    grid-area: flow;
+    overflow: auto;
+    margin-left: 150px;
+    background: green; //$jb-main-background;
+  }
 }

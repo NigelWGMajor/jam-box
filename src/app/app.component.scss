@@ -1,76 +1,99 @@
-@import './globals';
+@import "./globals";
 
 :host /deep/ {
   .jb-main {
+    // needed to allow children to positin absolutely:
+   
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-    background: $jb-edge-background;
-    color: $jb-title;
+    // background: $jb-edge-background;
+    // color: $jb-title;
     overflow: hidden;
+    z-index: 0;
+    margin: 0px;
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    margin: 0;
+    padding: 0;
   }
 }
+.jb-main { // this is the outermost frame
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
 
-body {
-  margin: 0;
-  padding: 0;
 }
-.jb-screen { // positions the page to fill the screen
-  position: absolute;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  padding-left: 10px;
-  padding-right: 10px;
-  top: 0px;
-  left: 0px; /* Gap left */
-  right: 0px; /* Gap right */
-  bottom: 0px;
-  background: $jb-main-background;
-//overflow: auto;
- 
-}
-.jb-layout { // Positions the main elements for multiple media.
+
+.jb-layout {
+  // Positions the main elements for multiple media.
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
   display: grid;
+  z-index: 20;
+  background: #443322; //!
+  padding-top: $jb-edge;
+  padding-right: $jb-edge;
+  padding-bottom: $jb-edge;
+  padding-left: $jb-edge;
   grid-template-areas:
-   "header header"
+    "header header"
     "nav nav"
     "major major"
     "footer footer";
-  grid-template-rows: auto, auto, 3fr, auto;
-  grid-template-columns: 1fr, 1fr;
+    grid-template-rows: $jb-header-height $jb-navbar-height 1fr $jb-footer-height;
+   grid-template-columns: 1fr 1fr;
 }
-
 .jb-header {
-  position: fixed;
-   padding-top: 10px;
-   background: transparent;
-   position: absolute;
-   top: 0;
-   left: 0;
-   right: 0;
-  //  height: $jb-header-height;
+  grid-area: header;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  
+  z-index: 100;
 }
 .jb-nav {
   grid-area: nav;
-  position: fixed;
-  height: $jb-navbar-height + $jb-image-height;
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  margin: 0;
+  background: pink;
+  z-index: 100;
 }
 .jb-major {
-  //position: ;
-  margin-top: 200px;
-  top: $jb-header-height + $jb-navbar-height + $jb-image-height; 
+   position: absolute;
+   top: 0;
+   right: 0;
+   left: 0;
+   bottom: 0;
+   z-index: -100; //!
+  
+ // padding-top: $jb-header-height + $jb-navbar-height + $jb-image-height;
   grid-area: major;
-   overflow: visible;
-   //height: auto;
-
+  overflow: visible;
+  z-index: 0;
+  background: maroon;
+  //height: auto;
 }
 .jb-footer {
-  padding-top: 10px;
-  padding-bottom: 10px;
   grid-area: footer;
   position: absolute;
-  background: transparent;
+  right: 0;
   bottom: 0;
   left: 0;
-  right: 0;
+  height: auto;
+  z-index: 100;
 }
 /deep/ .mat-tooltip {
   font-size: 1em;
@@ -78,5 +101,5 @@ body {
   text-align: center;
   margin: 10px;
   color: $jb-tooltip-color !important;
-  background: radial-gradient($jb-tooltip-background1 5%,$jb-tooltip-background2 20% , transparent 70%);
+  background: radial-gradient($jb-tooltip-background1 5%, $jb-tooltip-background2 20%, transparent 70%);
 }

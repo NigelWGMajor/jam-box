@@ -1,17 +1,35 @@
 @import "../globals";
-
-.jb-navbar {
+.jb-nav-bar {
   margin: 0;
-  nav {
+  padding: 0;
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  margin: 0;
+  background: #887766;
+  display: grid;
+  grid-template-rows: auto, 100px;
+  min-width: 500px;
+  justify-content: center;
+  overflow: hidden;
+  .jb-nav-top {
+    // the action list
+    // position: absolute;
+    // top: 0;
+    // left: 0;
+    // bottom: 0;
+    // right: 0;
+    margin: 0;
+    grid-row: 1/2;
     display: flex;
-    position: initial;
-    margin-top: 12px;
-    margin-bottom: 0;
+    
+   
+    min-width: 300px;
+    background: $jb-main-background;
+    list-style-type: none;
     justify-content: space-evenly;
-    ul {
-      background: $jb-main-background;
-      list-style-type: none;
-    }
+      align-content: center;
     li {
       float: left;
       margin-left: 6px;
@@ -20,7 +38,6 @@
       margin-bottom: 2px;
       padding: 3px;
       background: $jb-nav-background;
-      border-top-left-radius: 10px;
       color: $jb-nav-inactive-foreground;
       a {
         text-decoration: none;
@@ -36,30 +53,27 @@
       color: $jb-nav-hover-foreground;
       //font-weight: 800;
     }
-   
     .activated {
-      color: $jb-title !important; 
+      color: $jb-title !important;
       background: #222222;
       border: 1px;
       border-style: outset;
       border-color: #444444;
     }
   }
-  .jb-nav-top {
-    color: $jb-nav-inactive-foreground;
-    background-color: $jb-main-background;
-  }
-}
-.tight {
-  margin: 0;
-  padding: 0;
 }
 .jb-main-image {
   display: block;
-  width: 70%;
-  margin-left: auto;
-  margin-right: auto;
+  grid-row: 2/3;
+  height: 100px;
+  margin-left: 0;
+  margin-right: 0;
   margin-top: 0;
-  margin-bottom: 0;
+  margin-bottom: $jb-edge;
+  padding: 0;
+
+}
+body {
+  margin: 0;
   padding: 0;
 }

@@ -1,22 +1,29 @@
 @import '../globals';
 
-.jb-top-bar {
+body {
+  position: absolute;
+  top: 0;bottom: 0;left: 0;right: 0;
+  margin: 0;
+  padding: 0;
+  background: #223344; //!
+}
+.jb-header{ // this is the entire top bar
   display: grid;
   grid-template-areas: "logon welcome contact";
-  grid-template-rows: auto;
+  grid-template-rows: 100;
   grid-template-columns: auto 1fr auto;
   justify-items: center;
-  background: transparent;
+  background: $jb-main-background;
   color: $jb-title;
 }
 
-.jb-icon-contact {
+.jb-icon-contact { // icon on right
   grid-area: contact;
-  margin-left: 8px;
-  margin-right: 8px;
-  padding-top: 5px;
-  padding-right: 15px;
-  padding-left: 15px;
+  margin: 0;
+  padding-top: $jb-icon-pad-y;
+  padding-right: $jb-icon-pad-x;
+  padding-bottom: $jb-icon-pad-y;
+  padding-left: $jb-icon-pad-x;
   color: $jb-icon;
 
   :hover {
@@ -24,13 +31,13 @@
   }
 }
 
-.jb-icon-logon {
-  margin-left: 8px;
-  margin-right: 8px;
+.jb-icon-logon { //icon on left
   grid-area: logon;
-  padding-top: 5px;
-  padding-left: 15px;
-  padding-right: 15px;
+  margin: 0;
+  padding-top: $jb-icon-pad-y;
+  padding-left: $jb-icon-pad-x;
+  padding-bottom: $jb-icon-pad-y;
+  padding-right: $jb-icon-pad-x;
   color: $jb-icon;
 
   :hover {
@@ -38,13 +45,15 @@
   }
 }
 
-.jb-header-text {
+.jb-header-text { // mesge in the middle
   grid-area: welcome;
   font-style: italic;
   font-size: .85em;
-  padding-top: 5px;
-  padding-left: 20px;
-  padding-right: 20px;
+  margin-top: $jb-icon-pad-y;
+  padding-top: $jb-icon-pad-y;
+  padding-left: $jb-icon-pad-x;
+  padding-bottom: $jb-icon-pad-y;
+  padding-right: $jb-icon-pad-x;
 }
 
 .activated {
