@@ -1,26 +1,38 @@
-@import "../colorScheme";
-
-.jb-navbar {
+@import "../globals";
+.jb-nav-bar {
   margin: 0;
-  nav {
+  padding: 0;
+  position: fixed;
+  top: 100;
+  right: 0;
+  left: 0;
+  margin: 0;
+  background: transparent;
+  display: grid;
+  grid-template-names:
+  ". menu ."
+  "image image image";
+  grid-template-rows: auto, 100px;
+  justify-content: center;
+  .jb-nav-top {
+    margin: 0;
+    grid-name: menu;
     display: flex;
-    position: initial;
-    margin-top: 12px;
-    margin-bottom: 0;
+    flex-wrap: wrap;
+    min-width: 300px;
+    background: transparent; //$jb-main-background;
+    list-style-type: none;
     justify-content: space-evenly;
-    ul {
-      background: $jb-main-background;
-      list-style-type: none;
-    }
+    align-content: center;
     li {
-      float: left;
+      flex: 1, 1, 70px;
+      //float: left;
       margin-left: 6px;
       margin-right: 6px;
       margin-top: 4px;
       margin-bottom: 2px;
       padding: 3px;
       background: $jb-nav-background;
-      border-top-left-radius: 10px;
       color: $jb-nav-inactive-foreground;
       a {
         text-decoration: none;
@@ -36,30 +48,34 @@
       color: $jb-nav-hover-foreground;
       //font-weight: 800;
     }
-   
     .activated {
-      color: $jb-title !important; 
+      color: $jb-font-highlight !important;
       background: #222222;
       border: 1px;
       border-style: outset;
       border-color: #444444;
     }
   }
-  .jb-nav-top {
-    color: $jb-nav-inactive-foreground;
-    background-color: $jb-main-background;
+}
+.jb-image-frame {
+width: 95%;
+  .jb-main-image {
+   display:block;
+
+    max-height: 120px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 0;
+    margin-bottom: $jb-edge;
+    
   }
 }
-.tight {
+body {
   margin: 0;
   padding: 0;
-}
-.jb-main-image {
-  display: block;
-  width: 70%;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 0;
-  margin-bottom: 0;
-  padding: 0;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
 }
