@@ -36,11 +36,6 @@
 			
 				border-bottom-style: ridge;
 			  border-width: 1px 0;
-				//float: left;
-				// margin-left: 6px;
-				// margin-right: 6px;
-				// margin-top: 4px;
-				// margin-bottom: 2px;
 				padding: 3px;
 				background: $jb-nav-background;
 				color: $jb-font-highlight;
@@ -48,19 +43,13 @@
 				a {
 					text-decoration: none;
 					color: inherit;
-					// padding-left: 20px;
-					// padding-right: 20px;
-					// padding-bottom: 5px;
-					// padding-top: 5px;
 					font-size: 0.91em;
 					font-weight: 200;
 				}
 			}
-			li:hover /*& :not(.activated)*/ {
+			li:hover {
 				color: $jb-nav-hover-foreground;
-				//font-weight: 800;
 			}
-			
 		}
   }
   .flow {
