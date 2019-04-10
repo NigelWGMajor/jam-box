@@ -1,10 +1,11 @@
-@import './colorScheme';
+@import './globals';
 
 :host /deep/ {
   .jb-main {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     background: $jb-edge-background;
     color: $jb-title;
+    overflow: hidden;
   }
 }
 
@@ -12,7 +13,7 @@ body {
   margin: 0;
   padding: 0;
 }
-.jb-screen {
+.jb-screen { // positions the page to fill the screen
   position: absolute;
   padding-top: 10px;
   padding-bottom: 10px;
@@ -23,9 +24,10 @@ body {
   right: 0px; /* Gap right */
   bottom: 0px;
   background: $jb-main-background;
+//overflow: auto;
  
 }
-.jb-layout {
+.jb-layout { // Positions the main elements for multiple media.
   display: grid;
   grid-template-areas:
    "header header"
@@ -33,9 +35,7 @@ body {
     "major major"
     "footer footer";
   grid-template-rows: auto, auto, 3fr, auto;
-  grid-template-columns: 1fr, 1fr, 1fr, 1fr, 1fr;
-  bottom: 0px;
- 
+  grid-template-columns: 1fr, 1fr;
 }
 
 .jb-header {
@@ -46,14 +46,21 @@ body {
    top: 0;
    left: 0;
    right: 0;
- 
+  //  height: $jb-header-height;
 }
 .jb-nav {
   grid-area: nav;
+  position: fixed;
+  height: $jb-navbar-height + $jb-image-height;
 }
 .jb-major {
-   grid-area: major;
-   overflow-y: visible;
+  //position: ;
+  margin-top: 200px;
+  top: $jb-header-height + $jb-navbar-height + $jb-image-height; 
+  grid-area: major;
+   overflow: visible;
+   //height: auto;
+
 }
 .jb-footer {
   padding-top: 10px;

@@ -28,7 +28,7 @@ const routes: Routes = [
       onSameUrlNavigation: 'reload',
       enableTracing: true, // temporary
       scrollPositionRestoration: 'enabled',
-      scrollOffset: [0,200] // x, y offset for sticky stuff.
+      scrollOffset: [0, 400] // x, y offset for sticky stuff.
   })],
   exports: [RouterModule]
 })
