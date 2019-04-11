@@ -35,69 +35,71 @@
   right: 0;
   bottom: 0;
   left: 0;
-  display: -ms-grid;
   display: grid;
+  display: -ms-grid;
   z-index: 20;
   padding-top: $jb-edge;
   padding-right: $jb-edge;
   padding-bottom: $jb-edge;
   padding-left: $jb-edge;
-      grid-template-areas:
-    "header header"
-    "nav nav"
-    "major major"
-    "footer footer";
-    -ms-grid-rows: $jb-header-height $jb-navbar-height 1fr $jb-footer-height;
-    grid-template-rows: $jb-header-height $jb-navbar-height 1fr $jb-footer-height;
-   -ms-grid-columns: 1fr 1fr;
-   grid-template-columns: 1fr 1fr;
+  // grid-template-areas:
+  //   "header header"
+  //   "nav nav"
+  //   "major major"
+  //   "footer footer";
+  -ms-grid-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
+  -ms-grid-rows: $jb-header-height $jb-navbar-height 1fr $jb-footer-height;
+  grid-template-rows: $jb-header-height $jb-navbar-height 1fr $jb-footer-height;
 }
 .jb-header {
+  //grid-area: header;
   -ms-grid-row: 1;
+  grid-row: 1;
   -ms-grid-column: 1;
+  grid-column: 1;
   -ms-grid-column-span: 2;
-  grid-area: header;
+  grid-column-end: 3;
   position: absolute;
   top: 0;
   right: 0;
-  bottom: 0;
   left: 0;
-  
   z-index: 100;
 }
 .jb-nav {
   -ms-grid-row: 2;
+  grid-row: 2;
   -ms-grid-column: 1;
-  -ms-grid-column-span: 2;
-  grid-area: nav;
+  grid-column: 1;
   position: absolute;
-  top: 0;
-  right: 0;
-  left: 0;
-  bottom: 0;
   margin: 0;
   background: transparent;
   z-index: 100;
 }
 .jb-major {
    position: absolute;
-   top: 0;
-   right: 0;
-   left: 0;
-   bottom: 0;
-   z-index: -100; //!
-
-  grid-area: major;
+    top: 0;
+    right: 0;
+    left: 0;
+  bottom: 0;
+   z-index: 100; 
+  -ms-grid-row: 3;
+  grid-row: 3;
+  -ms-grid-column: 1;
+  grid-column: 1;
+  -ms-grid-row-span: 1;
+  -ms-grid-column-span: 1;
   overflow: visible;
   z-index: 0;
-  
-  //height: auto;
 }
 .jb-footer {
   -ms-grid-row: 4;
+  grid-row: 4;
   -ms-grid-column: 1;
+  grid-column: 1;
   -ms-grid-column-span: 2;
-  grid-area: footer;
+  grid-column-end: 3;
+ // grid-area: footer;
   position: absolute;
   right: 0;
   bottom: 0;
