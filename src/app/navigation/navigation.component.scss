@@ -3,30 +3,32 @@
   margin: 0;
   padding: 0;
   position: fixed;
-  top: 100;
+  top: $jb-header-height;
   right: 0;
   left: 0;
   margin: 0;
   background: transparent;
-  display: grid;
-  grid-template-names:
-  ". menu ."
-  "image image image";
-  grid-template-rows: auto, 100px;
+  display: flex;
+  flex-direction: column;
   justify-content: center;
+  align-content: center;
+  -ms-flex-align: center;
+  -ms-flex-justify: center;
   .jb-nav-top {
     margin: 0;
-    grid-name: menu;
     display: flex;
+    flex-direction: row;
     flex-wrap: wrap;
+    -ms-flex-direction: row;
+    -ms-flex-wrap: wrap;
     min-width: 300px;
     background: transparent; //$jb-main-background;
     list-style-type: none;
     justify-content: space-evenly;
     align-content: center;
+    z-index: 210;
     li {
       flex: 1, 1, 70px;
-      //float: left;
       margin-left: 6px;
       margin-right: 6px;
       margin-top: 4px;
