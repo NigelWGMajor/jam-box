@@ -8,18 +8,18 @@
   left: 0;
   right: 0;
   margin: 0;
-  margin: 30px;
+  margin: 0;
   min-height: 0;
+  background: transparent;
   .context {
     min-height: 0;
     margin-left: 0;
-    margin-top: 0;
-    margin-bottom: 0;
     margin-right: 0;
+    padding-left: $jb-edge;
+    padding-right: $jb-edge;
     background: transparent;
     max-width: 160px;
     color: $jb-font-highlight;
-    //overflow-y: scroll;
     ul {
       margin: 0;
       display: flex;
@@ -28,13 +28,13 @@
       padding: 0;
       li {
         margin: 0;
-        border-color: #444444;
-        border-bottom-style: ridge;
-        border-width: 1px 0;
-        padding: 3px;
         background: $jb-nav-background;
         color: $jb-font-highlight;
+        margin-right: 1px; /* slight break from scroll bar */
         a {
+          display: block; /* makes whole thing clickable. */
+          padding-left: $jb-edge / 4;
+          padding-right: $jb-edge; /* extends clickable area. */
           text-decoration: none;
           color: inherit;
           font-size: 0.91em;
@@ -43,14 +43,16 @@
       }
       li:hover {
         color: $jb-nav-hover-foreground;
+        background: $jb-nav-active-background3;
       }
     }
   }
   .flow {
     min-height: 0;
+    padding-left: $jb-edge;
+    padding-right: $jb-edge;
     flex: 1 1 80%;
-    margin-left: 150px;
-    background: transparent;
+    //margin-left: 150px;
     color: $jb-icon;
   }
 }
@@ -63,4 +65,7 @@ body {
   border: 1px;
   border-style: outset;
   border-color: #444444;
+}
+.jb-frame {
+  border-color: $jb-frame-foreground;
 }

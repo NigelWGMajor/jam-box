@@ -4,7 +4,10 @@
   padding-right: $jb-icon-pad-x;
   padding-bottom: $jb-icon-pad-y;
   padding-left: $jb-icon-pad-x;
-  margin: 0;
+  margin-top: $jb-edge * 0.5;
+  margin-right: $jb-edge;
+  margin-bottom: $jb-edge;
+  margin-left: $jb-edge;
   background-image: linear-gradient($jb-footer-background1, $jb-footer-background2, $jb-footer-background2);
 }
 .jb-footer-text {

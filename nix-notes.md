@@ -310,11 +310,7 @@ I plan to test these on one of the next layouts.  Basically should allow simplif
 
 ## Latest:
 
-I used mat-sidenav for the test contacts page, but had to resort to an absolute positioning for the side nav to get it to scroll.  Maybe I can avoid that though ...
-
-Can try removing the positioning code, as the right-hand panel is now working ...
-
-Alternatively, use the new "basic" table structure to get things working properly.
+I used mat-sidenav for the test contacts page.  This could maybe be eliminated by using the new "basic" table structure to get things working properly.
 
 # NEXT:
 

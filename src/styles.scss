@@ -24,6 +24,8 @@ purple-green.css
   
     // For Internet Explorer
     body {
+      scrollbar-3dlight-color: $foreground-color;
+      scrollbar-base-color: $foreground-color;
       scrollbar-face-color: $foreground-color;
       scrollbar-track-color: $background-color;
     }

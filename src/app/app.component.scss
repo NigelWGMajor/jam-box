@@ -50,7 +50,7 @@
   margin-top: $jb-edge;
   flex: 0 0 $jb-header-height;
   z-index: 0;
-  background: white;
+  background: transparent;
 }
 .jb-nav {
   flex: 0 0 $jb-navbar-height;
@@ -71,7 +71,7 @@
   flex: 0 0 $jb-footer-height;
   height: auto;
   z-index: 100;
-  background: green;
+  background: transparent;
   margin: 10px;
 }
 /deep/ .mat-tooltip {
