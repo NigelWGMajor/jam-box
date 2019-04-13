@@ -312,6 +312,8 @@ I plan to test these on one of the next layouts.  Basically should allow simplif
 
 I used mat-sidenav for the test contacts page.  This could maybe be eliminated by using the new "basic" table structure to get things working properly.
 
+
+
 # NEXT:
 
 I have already put the framework in place for all the pages, the main interface, the navigation and the reducers and effects are set up.  I have a provisional layout working although I will want to migrate this to css flex soon. I also migrated the underlying color choices to variables in a ColorScheme at the root of the project. I generated some sample graphics too so I can integrate these too. 
