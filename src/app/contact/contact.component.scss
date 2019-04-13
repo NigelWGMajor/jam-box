@@ -7,62 +7,55 @@
   bottom: 0;
   left: 0;
   right: 0;
-  //overflow: scroll;
-	margin: 0;
-		margin: 30px;
-		min-height: 0;
-    .context {
-      min-height: 0;
-      margin-left: 0;
-      margin-top: 0;
-      margin-bottom: 0;
-      margin-right: 0;
-      background: transparent;//!
-     max-width: 160px;
-      color: $jb-font-highlight;
-       overflow-y: scroll;
-      ul {
+  margin: 0;
+  margin: 30px;
+  min-height: 0;
+  .context {
+    min-height: 0;
+    margin-left: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+    margin-right: 0;
+    background: transparent;
+    max-width: 160px;
+    color: $jb-font-highlight;
+    //overflow-y: scroll;
+    ul {
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      list-style: none;
+      padding: 0;
+      li {
         margin: 0;
-        display: flex;
-        flex-direction: column;
-        list-style: none;
-        padding: 0;
-        li {
-          margin: 0;
-          border-color: #444444;
-
-          border-bottom-style: ridge;
-          border-width: 1px 0;
-          padding: 3px;
-          background: $jb-nav-background;
-          color: $jb-font-highlight;
-
-          a {
-            text-decoration: none;
-            color: inherit;
-            font-size: 0.91em;
-            font-weight: 200;
-          }
-        }
-        li:hover {
-          color: $jb-nav-hover-foreground;
+        border-color: #444444;
+        border-bottom-style: ridge;
+        border-width: 1px 0;
+        padding: 3px;
+        background: $jb-nav-background;
+        color: $jb-font-highlight;
+        a {
+          text-decoration: none;
+          color: inherit;
+          font-size: 0.91em;
+          font-weight: 200;
         }
       }
-    }
-    .flow {
-      min-height: 0;
-     // max-height: 200px;
-      flex: 1 1 80%;
-      // overflow: scroll;
-      margin-left: 150px;
-      background: transparent;
-      color: $jb-icon;
+      li:hover {
+        color: $jb-nav-hover-foreground;
+      }
     }
   }
-// }
+  .flow {
+    min-height: 0;
+    flex: 1 1 80%;
+    margin-left: 150px;
+    background: transparent;
+    color: $jb-icon;
+  }
+}
 body {
   margin: 0;
-
 }
 .activated {
   color: $jb-font-highlight !important;

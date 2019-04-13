@@ -1,6 +1,5 @@
 @import '../globals';
 
-/* used https://autoprefixer.github.io/ to patch for IE */
 body {
   position: absolute;
   top: 0; left: 0;right: 0;bottom: 0;
@@ -16,7 +15,6 @@ body {
   background: $jb-main-background;
   color: $jb-font-highlight;
 }
-
 .jb-icon-logon { //icon on left
   flex: 1 0 5%;
   margin: 0;
@@ -25,8 +23,7 @@ body {
   padding-bottom: $jb-icon-pad-y;
   padding-right: $jb-icon-pad-x;
   color: $jb-icon;
-  
-  :hover {
+    :hover {
     color: $jb-nav-hover-foreground;
   }
 }
@@ -41,7 +38,6 @@ body {
   padding-bottom: $jb-icon-pad-y;
   padding-right: $jb-icon-pad-x;
 }
-
 .jb-icon-contact { // icon on right
   flex: 1 0 5%; 
   margin: 0;

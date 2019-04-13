@@ -51,7 +51,6 @@
   flex: 0 0 $jb-header-height;
   z-index: 0;
   background: white;
-  //justify-self: stretch;
 }
 .jb-nav {
   flex: 0 0 $jb-navbar-height;
@@ -66,14 +65,10 @@
   z-index: 200;
   overflow: hidden;
   background:transparent;
-  margin: 50px;
+  margin: 0;
 }
 .jb-footer {
-   flex: 0 0 $jb-footer-height;
-  // position: relative;
-  // right: 0;
-  // bottom: 0;
-  // left: 0;
+  flex: 0 0 $jb-footer-height;
   height: auto;
   z-index: 100;
   background: green;

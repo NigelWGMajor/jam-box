@@ -8,6 +8,7 @@
   left: 0;
   margin: 0;
   background: transparent;
+  /* todo: refactor to get rid of flex */
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -16,13 +17,14 @@
   -ms-flex-justify: center;
   .jb-nav-top {
     margin: 0;
+    /* todo: refactor to get rid of flex */
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     -ms-flex-direction: row;
     -ms-flex-wrap: wrap;
     min-width: 300px;
-    background: transparent; 
+    background: transparent;
     list-style-type: none;
     justify-content: space-evenly;
     align-content: center;
@@ -46,9 +48,8 @@
         font-size: 1.1em;
       }
     }
-    li:hover /*& :not(.activated)*/ {
+    li:hover {
       color: $jb-nav-hover-foreground;
-      //font-weight: 800;
     }
     .activated {
       color: $jb-font-highlight !important;
@@ -60,16 +61,14 @@
   }
 }
 .jb-image-frame {
-width: 95%;
+  width: 95%;
   .jb-main-image {
-   display:block;
-
+    display: block;
     max-height: 120px;
     margin-left: auto;
     margin-right: auto;
     margin-top: 0;
     margin-bottom: $jb-edge;
-    
   }
 }
 body {

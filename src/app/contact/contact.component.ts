@@ -9,7 +9,7 @@ import { RouterModule } from '@angular/router';
 })
 
 export class ContactComponent implements OnInit {
-   heading: string = 'Contacts Test Page';
+  heading = 'Contacts Test Page';
   constructor() { }
 
   ngOnInit() {
