@@ -60,7 +60,9 @@
 }
 .jb-major {
   flex: 1 1 auto;
-  //display: block;
+  display: flex;
+  flex-direction: row;
+  flex: 100%;
   z-index: 200;
   overflow: hidden;
   background:transparent;
