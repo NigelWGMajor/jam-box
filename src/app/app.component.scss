@@ -19,31 +19,23 @@
     padding: 0;
   }
 }
-.jb-main {
-  display: inline-block;
+.jb-main { /* THe entire screen area */
   position: fixed;
   top: 0;
   right: 0;
   bottom: 0;
   left: 0;
-
-
+  display: block;
   background: $jb-main-background;
-  // this is the outermost frame
-  // position: fixed;
-  // top: 0;
-  // right: 0;
-  // bottom: 0;
-  // left: 0;
 }
 .jb-header {
-  position: fixed;
-  top: 0;
+ // position: fixed;
+ /// top: 0;
+ display: block;
   left: 0;
   right: 0;
-  display: block;
   margin-top: $jb-edge;
-  z-index: 0;
+  z-index: 100;
   background: transparent;
 }
 .jb-nav {
@@ -51,50 +43,15 @@
   background: transparent;
   z-index: 100;
 }
-.jb-layout {
-  // Wraps the main content.
-  display: table;
-  //height: 50%;
-  // top: 0;
-  // right: 0;
-  // bottom: 0;
-  // left: 0;
-  z-index: 0;
-  // padding-top: $jb-edge;
-  // padding-right: $jb-edge;
-  // padding-bottom: $jb-edge;
-  // padding-left: $jb-edge;
-  // we build the items from the top down:
-  // justify-content: flex-start;
-  // align-content: center;
-  // flex-direction: column;
-}
-.jb-major {
-  // flex: 1 1 auto;
-  display: table-cell;
-  width: 100%;
-  // height: -moz-calc(50%);
-  // height: -webkit-calc(50%);
-  // height: -o-calc(50%);
-  // height: calc(50%);
-  //height: calc(100% - $jb-footer-height);
-  //bottom: $jb-footer-height;
-  // flex-direction: row;
-  // flex: 100%;
-  z-index: 200;
-  overflow: hidden;
-  background: transparent;
-  margin: 0;
-}
+
 .jb-footer {
-  // flex: 0 0 $jb-footer-height;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
   display: block;
   position: fixed;
   bottom: $jb-edge;
   height: $jb-footer-height;
   z-index: 100;
   background: transparent;
-  // margin: 10px;
 }
 /deep/ .mat-tooltip {
   font-size: 1em;
@@ -105,11 +62,25 @@
   background: -webkit-radial-gradient($jb-tooltip-background1 5%, $jb-tooltip-background2 20%, transparent 70%);
   background: -o-radial-gradient($jb-tooltip-background1 5%, $jb-tooltip-background2 20%, transparent 70%);
   background: radial-gradient($jb-tooltip-background1 5%, $jb-tooltip-background2 20%, transparent 70%);
-  z-index: 9999;
+  z-index: 2000;
 }
-.flat {
-  margin-top: 0;
-  padding-top: 0;
-  margin-bottom: 0;
-  padding-bottom: 0;
+// .flat {
+//   // margin-top: 0;
+//   // padding-top: 0;
+//   // margin-bottom: 0;
+//   // padding-bottom: 0;
+// }
+.jb-midzone { /* contains the major wrapper for the outlet */
+  position: fixed;
+  top: $jb-header-height + $jb-navbar-height + $jb-edge;
+  bottom: $jb-footer-height + 10px;
+  left: $jb-edge;
+  right: $jb-edge;
+  z-index: 1000;
+  display: block;
+}
+.jb-outlet { /* has the router-outlet */
+  display: inline-block;
+  height: 100%; 
+  margin: 0;
 }

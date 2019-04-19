@@ -8,7 +8,7 @@
   left: 0;
   margin: 0;
   background: transparent; 
-  z-index: 2000;
+  z-index: 100;
   display: block;
   .jb-nav-top {
     margin: 0;
@@ -18,7 +18,7 @@
     background: transparent;
     list-style-type: none;
     text-align: center;
-    z-index: 210;
+    z-index: 200;
     li {
       display: inline-block;
       min-width: 80px;
@@ -65,12 +65,12 @@
     margin-bottom: $jb-edge/2;
   }
 }
-body {
-  margin: 0;
-  padding: 0;
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-}
+// body {
+//   margin: 0;
+//   padding: 0;
+//   position: absolute;
+//   top: 0;
+//   right: 0;
+//   bottom: 0;
+//   left: 0;
+// }

@@ -310,6 +310,11 @@ I plan to test these on one of the next layouts.  Basically should allow simplif
 
 Currently replacing the nav bar with noFlex difinintions to avoid the IE and Edge wrapping and justification issues.
 
+This is done.
+
+Known limitation: the header and footer depths for the mid-zone to avoid are hard-coded.  I'd prefer this to be self-calibrating.
+
+
 
 ## Latest:
 

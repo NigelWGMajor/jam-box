@@ -22,8 +22,7 @@
     color: $jb-font-highlight;
     ul {
       margin: 0;
-      display: flex;
-      flex-direction: column;
+
       list-style: none;
       padding: 0;
       li {
@@ -51,8 +50,6 @@
     min-height: 0;
     padding-left: $jb-edge;
     padding-right: $jb-edge;
-    flex: 1 1 80%;
-    //margin-left: 150px;
     color: $jb-icon;
   }
 }
