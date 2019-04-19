@@ -7,30 +7,21 @@
   right: 0;
   left: 0;
   margin: 0;
-  background: transparent;
-  /* todo: refactor to get rid of flex */
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-content: center;
-  -ms-flex-align: center;
-  -ms-flex-justify: center;
+  background: transparent; 
+  z-index: 100;
+  display: block;
   .jb-nav-top {
     margin: 0;
-    /* todo: refactor to get rid of flex */
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    -ms-flex-direction: row;
-    -ms-flex-wrap: wrap;
+    padding: 0;
+    display: block;
     min-width: 300px;
     background: transparent;
     list-style-type: none;
-    justify-content: space-evenly;
-    align-content: center;
-    z-index: 210;
+    text-align: center;
+    z-index: 200;
     li {
-      flex: 1, 1, 70px;
+      display: inline-block;
+      min-width: 80px;
       margin-left: 6px;
       margin-right: 6px;
       margin-top: 4px;
@@ -57,26 +48,29 @@
       border: 1px;
       border-style: outset;
       border-color: #444444;
-    }
+    } // todo: migrate colors to globals.
   }
 }
 .jb-image-frame {
+  display: block;
+  height: 100%;
   width: 95%;
+  z-index: 0;
+  text-align: center;
   .jb-main-image {
-    display: block;
     max-height: 120px;
     margin-left: auto;
     margin-right: auto;
     margin-top: 0;
-    margin-bottom: $jb-edge;
+    margin-bottom: $jb-edge/2;
   }
 }
-body {
-  margin: 0;
-  padding: 0;
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-}
+// body {
+//   margin: 0;
+//   padding: 0;
+//   position: absolute;
+//   top: 0;
+//   right: 0;
+//   bottom: 0;
+//   left: 0;
+// }
