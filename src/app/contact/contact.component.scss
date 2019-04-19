@@ -50,7 +50,7 @@
     min-height: 0;
     padding-left: $jb-edge;
     padding-right: $jb-edge;
-    color: $jb-icon;
+    color: $jb-icon-color;
   }
 }
 body {
@@ -58,10 +58,10 @@ body {
 }
 .activated {
   color: $jb-font-highlight !important;
-  background: #222222;
-  border: 1px;
+  background: $jb-active-background;
+  border: $jb-icon-border;
   border-style: outset;
-  border-color: #444444;
+  border-color: $jb-active-border-color;
 }
 .jb-frame {
   border-color: $jb-frame-foreground;

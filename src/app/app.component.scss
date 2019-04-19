@@ -57,7 +57,10 @@
   font-size: 1em;
   font-style: italic;
   text-align: center;
-  margin: 10px;
+  padding-top: $jb-tooltip-spread-y !important;
+  padding-right: $jb-tooltip-spread-x !important;
+  padding-bottom: $jb-tooltip-spread-y !important;
+  padding-left: $jb-tooltip-spread-x !important;
   color: $jb-tooltip-color !important;
   background: -webkit-radial-gradient($jb-tooltip-background1 5%, $jb-tooltip-background2 20%, transparent 70%);
   background: -o-radial-gradient($jb-tooltip-background1 5%, $jb-tooltip-background2 20%, transparent 70%);
