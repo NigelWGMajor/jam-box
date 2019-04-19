@@ -20,7 +20,7 @@ body {
   padding-left: $jb-icon-pad-x;
   padding-bottom: $jb-icon-pad-y;
   padding-right: $jb-icon-pad-x;
-  color: $jb-icon;
+  color: $jb-icon-color;
     :hover {
     color: $jb-nav-hover-foreground;
   }
@@ -32,7 +32,7 @@ body {
   padding-right: $jb-icon-pad-x;
   padding-bottom: $jb-icon-pad-y;
   padding-left: $jb-icon-pad-x;
-  color: $jb-icon;
+  color: $jb-icon-color;
   text-align: center;
   :hover {
     color: $jb-nav-hover-foreground;
@@ -51,8 +51,12 @@ body {
 .activated {
   color: $jb-font-highlight;
   text-align: center;
-  background: #222222;
-  border: 1px;
+  background: $jb-active-background;
+  border: $jb-icon-border;
+  padding-top: $jb-icon-pad-y - $jb-icon-border;
+  padding-right: $jb-icon-pad-x - $jb-icon-border;
+  padding-bottom: $jb-icon-pad-y - $jb-icon-border;
+  padding-left: $jb-icon-pad-x - $jb-icon-border;
   border-style: outset;
-  border-color: #444444;
+  border-color: $jb-active-border-color;
 }

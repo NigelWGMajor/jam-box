@@ -7,7 +7,7 @@
   right: 0;
   left: 0;
   margin: 0;
-  background: transparent; 
+  background: transparent;
   z-index: 100;
   display: block;
   .jb-nav-top {
@@ -22,21 +22,22 @@
     li {
       display: inline-block;
       min-width: 80px;
-      margin-left: 6px;
-      margin-right: 6px;
       margin-top: 4px;
+      margin-right: 6px + $jb-icon-pad-x;
       margin-bottom: 2px;
+      margin-left: 6px + $jb-icon-pad-x;
       padding: 3px;
       background: $jb-nav-background;
       color: $jb-nav-inactive-foreground;
       a {
         text-decoration: none;
         color: inherit;
-        padding-left: 20px;
-        padding-right: 20px;
-        padding-bottom: 5px;
-        padding-top: 5px;
+        padding-top: $jb-icon-pad-y;
+        padding-right: $jb-icon-pad-x;
+        padding-bottom: $jb-icon-pad-y;
+        padding-left: $jb-icon-pad-x;
         font-size: 1.1em;
+        box-sizing: border-box;
       }
     }
     li:hover {
@@ -44,10 +45,16 @@
     }
     .activated {
       color: $jb-font-highlight !important;
-      background: #222222;
-      border: 1px;
+      background: $jb-active-background;
+      border: $jb-icon-border;
       border-style: outset;
-      border-color: #444444;
+      border-color: $jb-active-border-color;
+      margin-left: 0 - $jb-icon-border;
+      margin-right: 0 - $jb-icon-border;
+      padding-left: $jb-icon-pad-x;
+      padding-right: $jb-icon-pad-x;
+      padding-bottom: $jb-icon-pad-y;
+      padding-top: $jb-icon-pad-y;
     } // todo: migrate colors to globals.
   }
 }
