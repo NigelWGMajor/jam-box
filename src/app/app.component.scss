@@ -19,13 +19,13 @@
     padding: 0;
   }
 }
-.jb-main { // this is the outermost frame
+.jb-main {
+  // this is the outermost frame
   position: fixed;
   top: 0;
   right: 0;
   bottom: 0;
   left: 0;
-
 }
 
 .jb-layout {
@@ -35,77 +35,44 @@
   right: 0;
   bottom: 0;
   left: 0;
-  display: grid;
-  display: -ms-grid;
-  z-index: 20;
+  z-index: 0;
   padding-top: $jb-edge;
   padding-right: $jb-edge;
   padding-bottom: $jb-edge;
   padding-left: $jb-edge;
-  // grid-template-areas:
-  //   "header header"
-  //   "nav nav"
-  //   "major major"
-  //   "footer footer";
-  -ms-grid-columns: 1fr 1fr;
-  grid-template-columns: 1fr 1fr;
-  -ms-grid-rows: $jb-header-height $jb-navbar-height 1fr $jb-footer-height;
-  grid-template-rows: $jb-header-height $jb-navbar-height 1fr $jb-footer-height;
+  // we build the items from the top down:
+  display: flex;
+  justify-content: flex-start;
+  align-content: center;
+  flex-direction: column;
 }
 .jb-header {
-  //grid-area: header;
-  -ms-grid-row: 1;
-  grid-row: 1;
-  -ms-grid-column: 1;
-  grid-column: 1;
-  -ms-grid-column-span: 2;
-  grid-column-end: 3;
-  position: absolute;
-  top: 0;
-  right: 0;
-  left: 0;
-  z-index: 100;
+  margin-top: $jb-edge;
+  flex: 0 0 $jb-header-height;
+  z-index: 0;
+  background: transparent;
 }
 .jb-nav {
-  -ms-grid-row: 2;
-  grid-row: 2;
-  -ms-grid-column: 1;
-  grid-column: 1;
-  position: absolute;
-  margin: 0;
+  flex: 0 0 $jb-navbar-height;
   background: transparent;
   z-index: 100;
 }
 .jb-major {
-   position: absolute;
-    top: 0;
-    right: 0;
-    left: 0;
-  bottom: 0;
-   z-index: 100; 
-  -ms-grid-row: 3;
-  grid-row: 3;
-  -ms-grid-column: 1;
-  grid-column: 1;
-  -ms-grid-row-span: 1;
-  -ms-grid-column-span: 1;
-  overflow: visible;
-  z-index: 0;
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: row;
+  flex: 100%;
+  z-index: 200;
+  overflow: hidden;
+  background:transparent;
+  margin: 0;
 }
 .jb-footer {
-  -ms-grid-row: 4;
-  grid-row: 4;
-  -ms-grid-column: 1;
-  grid-column: 1;
-  -ms-grid-column-span: 2;
-  grid-column-end: 3;
- // grid-area: footer;
-  position: absolute;
-  right: 0;
-  bottom: 0;
-  left: 0;
+  flex: 0 0 $jb-footer-height;
   height: auto;
   z-index: 100;
+  background: transparent;
+  margin: 10px;
 }
 /deep/ .mat-tooltip {
   font-size: 1em;
@@ -116,4 +83,10 @@
   background: -webkit-radial-gradient($jb-tooltip-background1 5%, $jb-tooltip-background2 20%, transparent 70%);
   background: -o-radial-gradient($jb-tooltip-background1 5%, $jb-tooltip-background2 20%, transparent 70%);
   background: radial-gradient($jb-tooltip-background1 5%, $jb-tooltip-background2 20%, transparent 70%);
+}
+.flat {
+  margin-top: 0;
+  padding-top: 0;
+  margin-bottom: 0;
+  padding-bottom: 0;
 }

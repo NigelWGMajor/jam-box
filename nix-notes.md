@@ -236,7 +236,7 @@ It also needs to show us who is logged in of course.
 
 We can simplify our access rules: if the prevailing player id is 0 it is the visitor, otherwise it's a real player.
 
-## CSS Grid:
+## CSS Grid: <(-- deprecated!
 
 I want the layout to switch easily by zone for different orientations.  Primarily I expect to have a "normal" landscape mode (e.g. 1920 * 1080), a half-monitor (e.g. 960 * 1080) and perhaps a skinny mode for phones (e.g. 640 * 1080).  I'd like the page to be responsive around these at least.
 
@@ -288,21 +288,46 @@ split  macro  major  major
 footer footer footer
 
 Let's apply this to the scss for the main page!
+
+## Grid out, flex in! <(-- also deprectated - IE fails to wrap 
+
+Grid fails miserably in IE though, so I'm going back to using FlexBox.
+
+branch 0412 starts this refactor.
+
+We are using the grid currently in 4 places so these should be handlable:
+I'm refactoring tin this sequence:
+
+- app.component         the main page
+- header.component      the top line
+- navigation.component  the nav bar
+- contact.component     the test page accessed through the contact.
  
-## NEXT:
+## noFlex definitions added!
+
+These are intended to use lower level (read ancient) methods to avoid some of the flex pitfalls.
+I plan to test these on one of the next layouts.  Basically should allow simplification of the dependencies for the major display elements.
+
+## Latest:
+
+I used mat-sidenav for the test contacts page.  This could maybe be eliminated by using the new "basic" table structure to get things working properly.
+
+
+
+# NEXT:
 
 I have already put the framework in place for all the pages, the main interface, the navigation and the reducers and effects are set up.  I have a provisional layout working although I will want to migrate this to css flex soon. I also migrated the underlying color choices to variables in a ColorScheme at the root of the project. I generated some sample graphics too so I can integrate these too. 
 There is already a sqlite database in place and I have set up a simple table to manage logon information.
+
 ## Code-wise
+
 - Connect the login page to the service that will provide authentication through an effect;
 - Have the service respond with success or failure to the reducers;
-- Have the state change on a successful log on reflect back to the main screen through an observable.
+- Have the state change on a successful log on reflect back to the header and footer through an observable.
 
 This will frame out the main functional loops.
 
 ## UI-wise
-- Refactor the main page so that the main zones resize correctly at most resolutions;
-- Apply some standard graphics to the main page;
-- Float the main paging buttons over the graphics;
-- Use two-tone and animated icons;
+
+- Refactor the main page so that the main zones resize correctly at most resolutions; <(-- use @medium
 - Apply some simple animations to provide subtle transitios.

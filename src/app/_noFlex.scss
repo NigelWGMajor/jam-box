@@ -1,0 +1,125 @@
+/* based on this post:
+https://kyusuf.com/post/almost-complete-guide-to-flexbox-without-flexbox/
+*/
+/* Attempt to get back to basic stuff that should work in most browsers. */
+.box-row {
+  .item {
+    display: inline-block;
+  }
+}
+.box-row-reverse {
+  direction: rtl;
+  .item {
+    display: inline-block;
+  }
+}
+.box-column {
+  .item {
+    display: block;
+  }
+}
+.box-column-reverse {
+  transform: scaleY(-1);
+  .item {
+    display: block;
+  }
+}
+.box-squish {
+  display: table;
+  .item {
+    display: table-cell;
+  }
+}
+.blob-wrap-row {
+  display: inline-block;
+}
+.box-justify-h-left {
+  text-align: left;
+  .item {
+    display: inline-block;
+  }
+}
+.box-justify-h-right {
+  text-align: right;
+  .item {
+    display: inline-block;
+  }
+}
+.box-justify-h-centered {
+  text-align: center;
+  .item {
+    display: inline-block;
+  }
+}
+.box-space-between {
+  text-align: justify;
+  :after {
+    content: "";
+    display: inline-block;
+    width: 100%;
+  }
+  .item {
+    display: inline-block;
+  }
+}
+.box-space-around {
+  display: table;
+  .item {
+    display: table-cell;
+    text-align: center;
+  }
+}
+.box-align-v-end {
+  display: table;
+  .item {
+    display: table-cell;
+    vertical-align: bottom;
+  }
+}
+.box-align-v-center {
+  display: center;
+  .item {
+    display: table-cell;
+    vertical-align: middle;
+  }
+}
+.box-align-v-stretch {
+  .item {
+    display: inline-block;
+    height: 100%;
+  }
+}
+/* allows one item-fill item to fill the remaining space */
+.box-flex-fill {
+    display: table;
+    .item {
+        display:table-cell;
+    }
+    .item-fill {
+        width: 100%;
+    }
+}
+/* allows max-width item to yield space to all others */
+.box-flex-fix {
+    display: table;
+    .item {
+        display: table-cell;
+    }
+    .item-fix {
+        width: max-width; /* maybe? */
+    }
+}
+.box-align-v-self {
+    display: table;
+    .item-top .item {
+        display: table-cell;
+    }
+    .item-middle {
+        display: table-cell;
+        vertical-align: middle;
+    }
+    .item-bottom {
+        display: table-cell;
+        vertical-align: bottom;
+    }
+}

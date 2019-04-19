@@ -1,10 +1,8 @@
-<body>
-
-  <div class="jb-contact">
-    <div class="context">
-      <div class="jb-side-heading">
-        <P>{{heading}}</P> 
-      </div>
+<mat-sidenav-container class="jb-contact">
+  <!-- <div class="jb-flex-frame "> -->
+    <mat-sidenav mode="side" opened class="context" >
+      <span class="jb-side-heading">{{heading}}</span>
+      <hr class="jb-frame">
       <!-- ul>(li>a[href="item$$" target="_self"]{Item $})*20 -->
       <!-- ul>(li>a[routerlink="/contact" fragment="#item-$$"]{Item $})*20 -->
       <!--  ul>(li>a[href="#item-$$" routerlink="/contact"  fragment="#item-$$"]{Item $})*20-->
@@ -30,8 +28,9 @@
         <li><a href="#item-19" routerlink="/contact" fragment="#item-19">Item 19</a></li>
         <li><a href="#item-20" routerlink="/contact" fragment="#item-20">Item 20 is a really really long one!</a></li>
       </ul>
-    </div>
-    <div class="flow">
+    </mat-sidenav>
+    <!-- </div> -->
+    <mat-sidenav-content class="flow" >
       <!-- (h2[id="item-$$"]{Item $}+p>lorem25)*20 -->
       <div>
         <h2 id="item-01">Item 1</h2>
@@ -103,6 +102,5 @@
           cum
           aperiam non vitae eos? Doloremque optio, voluptates architecto ipsam sequi ipsum molestias!</p>
       </div>
-    </div>
-  </div>
-</body>
+    </mat-sidenav-content>
+</mat-sidenav-container>

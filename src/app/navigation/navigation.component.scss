@@ -3,30 +3,34 @@
   margin: 0;
   padding: 0;
   position: fixed;
-  top: 100;
+  top: $jb-header-height;
   right: 0;
   left: 0;
   margin: 0;
   background: transparent;
-  display: grid;
-  grid-template-names:
-  ". menu ."
-  "image image image";
-  grid-template-rows: auto, 100px;
+  /* todo: refactor to get rid of flex */
+  display: flex;
+  flex-direction: column;
   justify-content: center;
+  align-content: center;
+  -ms-flex-align: center;
+  -ms-flex-justify: center;
   .jb-nav-top {
     margin: 0;
-    grid-name: menu;
+    /* todo: refactor to get rid of flex */
     display: flex;
+    flex-direction: row;
     flex-wrap: wrap;
+    -ms-flex-direction: row;
+    -ms-flex-wrap: wrap;
     min-width: 300px;
-    background: transparent; //$jb-main-background;
+    background: transparent;
     list-style-type: none;
     justify-content: space-evenly;
     align-content: center;
+    z-index: 210;
     li {
       flex: 1, 1, 70px;
-      //float: left;
       margin-left: 6px;
       margin-right: 6px;
       margin-top: 4px;
@@ -44,9 +48,8 @@
         font-size: 1.1em;
       }
     }
-    li:hover /*& :not(.activated)*/ {
+    li:hover {
       color: $jb-nav-hover-foreground;
-      //font-weight: 800;
     }
     .activated {
       color: $jb-font-highlight !important;
@@ -58,16 +61,14 @@
   }
 }
 .jb-image-frame {
-width: 95%;
+  width: 95%;
   .jb-main-image {
-   display:block;
-
+    display: block;
     max-height: 120px;
     margin-left: auto;
     margin-right: auto;
     margin-top: 0;
     margin-bottom: $jb-edge;
-    
   }
 }
 body {

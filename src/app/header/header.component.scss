@@ -1,6 +1,5 @@
 @import '../globals';
 
-/* used https://autoprefixer.github.io/ to patch for IE */
 body {
   position: absolute;
   top: 0; left: 0;right: 0;bottom: 0;
@@ -10,61 +9,26 @@ body {
   background: $jb-main-background;
 }
 .jb-header{ // this is the entire top bar
-  display: grid;
-  display: -ms-grid;
-  grid-template-areas: "logon welcome contact";
-  -ms-grid-rows: auto;
-  grid-template-rows: auto;
-  -ms-grid-columns: auto 1fr auto;
-  grid-template-columns: auto 1fr auto;
+  display: flex;
+  flex-direction: row;
   justify-items: center;
   background: $jb-main-background;
   color: $jb-font-highlight;
 }
-
-.jb-icon-contact { // icon on right
-  float: right;
-  grid-area: contact;
-  -ms-grid-column: 3;
-  grid-column: 3;
-  -ms-grid-row: 1;
-  grid-row: 1;
-  margin: 0;
-  padding-top: $jb-icon-pad-y;
-  padding-right: $jb-icon-pad-x;
-  padding-bottom: $jb-icon-pad-y;
-  padding-left: $jb-icon-pad-x;
-  color: $jb-icon;
-  :hover {
-    color: $jb-nav-hover-foreground;
-  }
-}
-
 .jb-icon-logon { //icon on left
-  grid-area: logon;
-  -ms-grid-column: 1;
-  grid-column: 1;
-  -ms-grid-row: 1;
-  grid-row: 1;
+  flex: 1 0 5%;
   margin: 0;
   padding-top: $jb-icon-pad-y;
   padding-left: $jb-icon-pad-x;
   padding-bottom: $jb-icon-pad-y;
   padding-right: $jb-icon-pad-x;
   color: $jb-icon;
-
-  :hover {
+    :hover {
     color: $jb-nav-hover-foreground;
   }
 }
-
 .jb-header-text { // message in the middle
-  grid-area: welcome;
-  -ms-grid-column: 2;
-  grid-column: 2;
-  -ms-grid-row: 1;
-  grid-row: 1;
-  -ms-text-align:  center;
+  flex: 1 1 80%;
   text-align: center;
   font-style: italic;
   font-size: .85em;
@@ -74,9 +38,22 @@ body {
   padding-bottom: $jb-icon-pad-y;
   padding-right: $jb-icon-pad-x;
 }
-
+.jb-icon-contact { // icon on right
+  flex: 1 0 5%; 
+  margin: 0;
+  padding-top: $jb-icon-pad-y;
+  padding-right: $jb-icon-pad-x;
+  padding-bottom: $jb-icon-pad-y;
+  padding-left: $jb-icon-pad-x;
+  color: $jb-icon;
+  text-align: center;
+  :hover {
+    color: $jb-nav-hover-foreground;
+  }
+}
 .activated {
   color: $jb-font-highlight;
+  text-align: center;
   background: #222222;
   border: 1px;
   border-style: outset;

@@ -24,6 +24,8 @@ purple-green.css
   
     // For Internet Explorer
     body {
+      scrollbar-3dlight-color: $foreground-color;
+      scrollbar-base-color: $foreground-color;
       scrollbar-face-color: $foreground-color;
       scrollbar-track-color: $background-color;
     }
@@ -32,5 +34,7 @@ purple-green.css
 
   .jb-side-heading {
     font-size: 1.2em;
+    margin: 0;
+    padding: 0;
  }
 
