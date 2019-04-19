@@ -9,15 +9,13 @@ body {
   background: $jb-main-background;
 }
 .jb-header{ // this is the entire top bar
-  display: flex;
-  flex-direction: row;
-  justify-items: center;
+  display: block;
   background: $jb-main-background;
   color: $jb-font-highlight;
 }
 .jb-icon-logon { //icon on left
-  flex: 1 0 5%;
-  margin: 0;
+  float: left;
+  margin: $jb-edge/4;
   padding-top: $jb-icon-pad-y;
   padding-left: $jb-icon-pad-x;
   padding-bottom: $jb-icon-pad-y;
@@ -27,20 +25,9 @@ body {
     color: $jb-nav-hover-foreground;
   }
 }
-.jb-header-text { // message in the middle
-  flex: 1 1 80%;
-  text-align: center;
-  font-style: italic;
-  font-size: .85em;
-  margin-top: $jb-icon-pad-y;
-  padding-top: $jb-icon-pad-y;
-  padding-left: $jb-icon-pad-x;
-  padding-bottom: $jb-icon-pad-y;
-  padding-right: $jb-icon-pad-x;
-}
 .jb-icon-contact { // icon on right
-  flex: 1 0 5%; 
-  margin: 0;
+  float: right;
+  margin: $jb-edge/4;
   padding-top: $jb-icon-pad-y;
   padding-right: $jb-icon-pad-x;
   padding-bottom: $jb-icon-pad-y;
@@ -50,6 +37,16 @@ body {
   :hover {
     color: $jb-nav-hover-foreground;
   }
+}
+.jb-header-text { // message in the middle
+  text-align: center;
+  font-style: italic;
+  font-size: .85em;
+  margin-top: $jb-icon-pad-y;
+  padding-top: $jb-icon-pad-y;
+  padding-left: $jb-icon-pad-x;
+  padding-bottom: $jb-icon-pad-y;
+  padding-right: $jb-icon-pad-x;
 }
 .activated {
   color: $jb-font-highlight;
