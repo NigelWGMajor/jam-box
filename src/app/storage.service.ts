@@ -58,7 +58,7 @@ export class StorageService implements OnInit, OnDestroy {
   }
 
   getEach(params) {
-    const sql = 'something returning zero or more rows';
+    const sql = 'something returning zero or more rows iteravely';
     this.db.each(sql, params, (err, row) => {
       if (err) {
         return console.error(err.message);
