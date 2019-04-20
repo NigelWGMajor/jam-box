@@ -6,7 +6,7 @@
   .jb-main {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     background: $jb-edge-background;
-    color: $jb-font-normal;
+    color: $jb-font-normal-color;
     overflow: hidden;
     z-index: 0;
     margin: 0px;
@@ -19,7 +19,8 @@
     padding: 0;
   }
 }
-.jb-main { /* THe entire screen area */
+.jb-main {
+  /* THe entire screen area */
   position: fixed;
   top: 0;
   right: 0;
@@ -29,9 +30,7 @@
   background: $jb-main-background;
 }
 .jb-header {
- // position: fixed;
- /// top: 0;
- display: block;
+  display: block;
   left: 0;
   right: 0;
   margin-top: $jb-edge;
@@ -43,12 +42,13 @@
   background: transparent;
   z-index: 100;
 }
-
 .jb-footer {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   display: block;
   position: fixed;
+  left: 0;
   bottom: $jb-edge;
+  right: 0;
   height: $jb-footer-height;
   z-index: 100;
   background: transparent;
@@ -67,13 +67,8 @@
   background: radial-gradient($jb-tooltip-background1 5%, $jb-tooltip-background2 20%, transparent 70%);
   z-index: 2000;
 }
-// .flat {
-//   // margin-top: 0;
-//   // padding-top: 0;
-//   // margin-bottom: 0;
-//   // padding-bottom: 0;
-// }
-.jb-midzone { /* contains the major wrapper for the outlet */
+.jb-midzone {
+  /* contains the major wrapper for the outlet */
   position: fixed;
   top: $jb-header-height + $jb-navbar-height + $jb-edge;
   bottom: $jb-footer-height + 10px;
@@ -82,8 +77,75 @@
   z-index: 1000;
   display: block;
 }
-.jb-outlet { /* has the router-outlet */
-  display: inline-block;
-  height: 100%; 
+.jb-outlet {
+  /* has the router-outlet */
+  display: block;
+  height: 100%;
   margin: 0;
 }
+/deep/ {
+  .jb-field-caption {
+    font-style: italic;
+    padding-top: $jb-edge;
+    margin-bottom: $jb-edge/4;
+    background: transparent;
+    font-size: 0.9em;
+    color: $jb-field-caption;
+    margin-left: $jb-edge;
+  }
+  .jb-field-value {
+    display: block;
+    font-style: bold;
+    font-size: 1.2em;
+    background: $jb-field-background;
+    color: $jb-field-foreground;
+    padding-left: $jb-field-pad-x;
+    padding-left: $jb-field-pad-x;
+    margin-right: $jb-edge;
+    margin-left: $jb-edge;
+  }
+  // .jb-field-value:hover  {
+  //   background: $jb-field-background-active;
+  // }
+  .jb-field-value:focus {
+    background: $jb-field-background-active;
+  }
+  .jb-field-password {
+    display: block;
+    font-style: normal;
+    background: $jb-field-background;
+    color: $jb-field-foreground;
+    font-size: 1.2em;
+    padding-left: $jb-field-pad-x;
+    padding-left: $jb-field-pad-x;
+    margin-right: $jb-edge;
+    margin-left: $jb-edge;
+  }
+  // .jb-field-password:hover  {
+  //   background: $jb-field-background-active;
+  // }
+  .jb-field-password:focus {
+    background: $jb-field-background-active;
+  }
+  .jb-action-button {
+    min-width: 100px;
+    font-style: italic;
+    margin-top: $jb-edge * 2;
+    margin-bottom: $jb-edge;
+    padding: $jb-edge/2;
+    font-size: 1em;
+    margin-left: $jb-edge;
+    border: 1px;
+    border-style: outset;
+    border-radius: 10px;
+    border-color: $jb-font-highlight;
+    background-image: linear-gradient($jb-footer-background1, $jb-footer-background1, $jb-footer-background2);
+    color: $jb-font-highlight;
+  }
+  .jb-action-button:hover {
+    border-style: inset;
+    background-image: linear-gradient($jb-button-background1, $jb-button-background2, $jb-button-background2);
+    color: $jb-button-font-color;
+  }
+}
+
