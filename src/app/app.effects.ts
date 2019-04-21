@@ -1,13 +1,13 @@
-import { Injectable } from '@angular/core';
-import { Actions, Effect } from '@ngrx/effects';
+// import { Injectable } from '@angular/core';
+// import { Actions, Effect } from '@ngrx/effects';
 
 
 
-@Injectable()
-export class AppEffects {
+// @Injectable()
+// export const appEffects:{
+ 
 
 
+//   constructor(private actions$: Actions) {}
 
-  constructor(private actions$: Actions) {}
-
-}
+// }

@@ -327,16 +327,37 @@ I used mat-sidenav for the test contacts page.  This may later later be eliminat
 I have already put the framework in place for all the pages, the main interface, the navigation and the reducers and effects are set up.  I have a provisional layout working. I also migrated the underlying color choices to variables in a ColorScheme at the root of the project and basic geometry constants to a _geometry style file. I generated some sample graphics too so I can integrate these too. 
 There is already a sqlite database in place and I have set up a simple table to manage logon information.
 
-## Coding the fundamental redux loop
+## Coding the fundamental redux loop - 0421 effect
 
 - The logon ui should have inputs and a submission method.
 - This passes the payload to an effect via action LOGON_ATTEMPT.
 - This should in turn call the authentication service, which needs to ask the database via the storage service for authentication information.  
-- Based on the results of this, the action LOGON_FAILURE or LOGON_SUCCESS is initiated.  Success will adjust the display name and set the global trust level, failure might show a message and leave the visitor status intact.  Perhaps a failure to authenticate is logged for that ip....
+- Based on the results of this, the action LOGON_FAILURE or LOGON_SUCCESS is initiated.  Success will adjust the selected user in the store, failure might just show a message and leave the visitor status intact.  Perhaps a failure to authenticate is logged for that ip....
+- The header shows the logged-in user name, so we need to bind it to the store.
+- Then we need to ensure that the store is intialized to the zero-config user.
+- The store itself will first have been initialized to contain the entore user set!  This should be through an effect call to read users, which also returns the defaut user as the selected user (as the initial index is the magic 0).
 
+
+
+References:
+https://www.youtube.com/watch?v=N_UQx8dPPkc&list=PLW2eQOsUPlWJRfWGOi9gZdc3rE4Fke0Wv
+https://www.youtube.com/watch?v=yU8-mDhawEw
+https://www.youtube.com/watch?v=f97ICOaekNU
+https://www.youtube.com/watch?v=9P5DTlg9oLc
+https://www.youtube.com/watch?v=80Y-JS5EVqQ&list=PLW2eQOsUPlWJRfWGOi9gZdc3rE4Fke0Wv&index=6
+https://www.youtube.com/watch?v=Mwo52v3ajmE&list=PLW2eQOsUPlWJRfWGOi9gZdc3rE4Fke0Wv&index=14
+
+also by the way look at:
+https://www.youtube.com/watch?v=-W_VsLXmjJU
 
 This will frame out the main functional loop:  The rest of the program interactions will be following this pattern or a subset of that so do it carefully!
 
+### actual tasks that were handled:
+
+- in app.module.ts: ```import { FormsModule } from '@angular/forms';```.
+- in logon component, bind the username and password to properties using [(ngModel)]
+- add a click event to the logon button.
+- inject the store in the constructor!
 ## UI-wise 
 
 - Refactor the main page so that the main zones resize correctly at most resolutions; <(-- use @medium
@@ -345,7 +366,7 @@ This will frame out the main functional loop:  The rest of the program interacti
 - Incorporate some icons in suitable places as visual reinforcements
 - APp;y a context tiltle transparently over the main graphic
 
-## Legacy Content
+## Legacy Content- one possibility?
 
 - determine appropriate classing conventions for main body text, pictures, hadings and linkable artifacts;
 - make a drag-and-drop tool to generate source for content-indexed display;

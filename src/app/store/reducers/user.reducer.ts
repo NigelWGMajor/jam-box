@@ -10,29 +10,24 @@ export const userReducers = (
   action: UserActions
 ): IUserState => {
   switch (action.type) {
-    case UserActionTypes.GetUsers: {
+    case UserActionTypes.LogOnUser: { // //!  move to effect
       return {
-        ...state,
-        users: action.payload
-              };
-    }
-    case UserActionTypes.GetUsersSuccess: {
-      return {
-        ...state,
-        users: action.payload
+        // this will actually be altered and moved to an effect to interact with the database...
+        users: state.users, selectedUser: action.payload
       };
     }
-    case UserActionTypes.SignInUser: {
+    case UserActionTypes.LogOnUserSuccess: {
       return {
-        ...state,
-        selectedUser: action.payload
+        users: state.users, selectedUser: action.payload
       };
     }
-    case UserActionTypes.SignInUserSuccess: {
+    case UserActionTypes.LogOnUserFailure: {
+      // somehow should return a failure message - this should be sent from the effect in a different action.
+      return state;
+    }
+    case UserActionTypes.LoadUsersSuccess: {
       return {
-        ...state,
-        selectedUser: action.payload
-      };
+        users: action.payload, selectedUser: action.payload[0]};
     }
     default:
       return state;
