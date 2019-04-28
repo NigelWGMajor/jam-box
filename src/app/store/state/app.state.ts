@@ -16,3 +16,4 @@ export const initialAppState: IAppState = {
 export function getInitialState(): IAppState {
     return initialAppState;
 }
+

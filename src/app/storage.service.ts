@@ -1,5 +1,7 @@
 import { Injectable, OnDestroy, OnInit } from '@angular/core';
-import { sqlite3 } from 'sqlite3';
+// import { sqlite3 } from 'sqlite3';
+
+import { IUser } from './models/user.interface';
 
 @Injectable({
   providedIn: 'root'
@@ -13,12 +15,12 @@ export class StorageService implements OnInit, OnDestroy {
   // lifecycle:
   ngOnInit() {
     // for an in-memory database we would use sqlite3.database(':memory:')
-    const db = sqlite3.database('./db/jambox.db', [sqlite3.OPEN_READWRITE, sqlite3.OPEN_CREATE], (err: { message: any; }) => {
-      if (err) {
-        console.error(err.message);
-      }
-      console.log('Database connected.');
-    });
+   // const db = sqlite3.database('./db/jambox.db', [sqlite3.OPEN_READWRITE, sqlite3.OPEN_CREATE], (err: { message: any; }) => {
+//      if (err) {
+//        console.error(err.message);
+//      }
+//      console.log('Database connected.');
+//    });
   }
 
   ngOnDestroy() {
@@ -34,29 +36,33 @@ export class StorageService implements OnInit, OnDestroy {
   // db.each() // iterates through the rows
   // db.get() // when zero or one result is expected
 
-  getAll(params) {
-    const sql = 'something return zero to many rows';
+  getAllUsers(): any {
+    const params: any = null;
+    const sql = 'select Id, Name, Description, Key, TrustLevel, DisplayName from players  where disabled <> true order by Id';
     this.db.all(sql, params, (err, rows) => {
       if (err) {
         return console.error(err.message);
       }
+      const data: IUser[] = [];
       rows.forEach((row) => {
-        console.log(row.name);
+        data.push(row);
       });
+      return data;
     });
   }
 
-  getOne(params) {
-    const sql = 'something return zero to one row';
-    this.db.get(sql, params, (err, row) => {
-      if (err) {
-        return console.error(err.message);
-      }
-      // process row here!
-      console.log(row);
-    });
-  }
+  // getOne(params) {
+  //   const sql = 'something return zero to one row';
+  //   this.db.get(sql, params, (err, row) => {
+  //     if (err) {
+  //       return console.error(err.message);
+  //     }
+  //     // process row here!
+  //     console.log(row);
+  //   });
+  // }
 
+<<<<<<< HEAD
   getEach(params) {
     const sql = 'something returning zero or more rows iteravely';
     this.db.each(sql, params, (err, row) => {
@@ -67,4 +73,16 @@ export class StorageService implements OnInit, OnDestroy {
       console.log(row);
     });
   }
+=======
+  // getEach(params) {
+  //   const sql = 'something returning zero or more rows iteravely';
+  //   this.db.each(sql, params, (err, row) => {
+  //     if (err) {
+  //       return console.error(err.message);
+  //     }
+  //     // called once for each row:
+  //     console.log(row);
+  //   });
+  // }
+>>>>>>> a3407147c5a56fd578ec6bc0a9a9dd8965842162
 }
