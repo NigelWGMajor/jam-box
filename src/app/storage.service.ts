@@ -1,5 +1,5 @@
 import { Injectable, OnDestroy, OnInit } from '@angular/core';
-import { sqlite3 } from 'sqlite3';
+// import { sqlite3 } from 'sqlite3';
 
 import { IUser } from './models/user.interface';
 
@@ -15,12 +15,12 @@ export class StorageService implements OnInit, OnDestroy {
   // lifecycle:
   ngOnInit() {
     // for an in-memory database we would use sqlite3.database(':memory:')
-    const db = sqlite3.database('./db/jambox.db', [sqlite3.OPEN_READWRITE, sqlite3.OPEN_CREATE], (err: { message: any; }) => {
-      if (err) {
-        console.error(err.message);
-      }
-      console.log('Database connected.');
-    });
+   // const db = sqlite3.database('./db/jambox.db', [sqlite3.OPEN_READWRITE, sqlite3.OPEN_CREATE], (err: { message: any; }) => {
+//      if (err) {
+//        console.error(err.message);
+//      }
+//      console.log('Database connected.');
+//    });
   }
 
   ngOnDestroy() {
