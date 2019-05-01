@@ -6,16 +6,16 @@ import { StorageService } from '../../storage.service';
 
 @Injectable()
 export class UserEffects {
-  @Effect()
-  loadUsers$ = this.actions$
-    .pipe(
-      ofType('[User] Load Users'),
-      mergeMap(() => this.userService.getAllUsers()
-        .pipe(
-          map(users => ({ type: '[User] Load Users Success', payload: users })),
-          catchError(() => EMPTY)
-        ))
-    );
+  // @Effect()
+  // loadUsers$ = this.actions$
+  //   .pipe(
+  //     ofType('[User] Load Users'),
+  //     mergeMap(() => this.userService.getAllUsers()
+  //       .pipe(
+  //         map(users => ({ type: '[User] Load Users Success', payload: users })),
+  //         catchError(() => EMPTY)
+  //       ))
+  //   );
 
   constructor(
     private actions$: Actions,
