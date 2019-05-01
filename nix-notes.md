@@ -20,7 +20,7 @@ npm start
 code .
 
 ```
-Gitcraken PAT:
+Gitkraken PAT:
 pf719447c6fb5e8334d3bda723e2e6b1448ff955d
 Nigel Major
 (logged in through my GitHub account)
@@ -113,9 +113,9 @@ header {
   music works!
 </p>
 ```
-Now you have a system-wide font ...
+Now we have a system-wide font ...
 
-Next we cleaned up some display issues so that we would have a dark background to the very edges...
+Next we clean up some display issues so that we have a dark background to the very edges...
 in app.component template:
 ```xml
 <body class="jb-main">
@@ -177,7 +177,7 @@ and also @ngrx/schematics:
 `npm install @ngrx/schematics --save-dev`
 
 This should allow me to automate some of the setup operations for the store.
-So first install verify install (different couyrcse, maybe different subset):
+So first install verify install (different course, maybe different subset):
 
 `npm install @ngrx/store @ngrx/effects @ngrx/entity @ngrx/store-devtools --save`
 
@@ -289,7 +289,7 @@ footer footer footer
 
 Let's apply this to the scss for the main page!
 
-## Grid out, flex in! <(-- also deprectated - IE fails to wrap 
+## Grid out, flex in! <(-- also deprectated - IE fails to wrap, edge is screwy too.
 
 Grid fails miserably in IE though, so I'm going back to using FlexBox.
 
@@ -316,26 +316,104 @@ Known limitation: the header and footer depths for the mid-zone to avoid are har
 
 
 
-## Latest:
+## wrong way ... :
 
-I used mat-sidenav for the test contacts page.  This could maybe be eliminated by using the new "basic" table structure to get things working properly.
+I used mat-sidenav for the test contacts page.  This may later later be eliminated by using the new "basic" table structure to get things working properly.  This will come out in the wash a lttle later ...
 
 
 
-# NEXT:
+# Next:
 
-I have already put the framework in place for all the pages, the main interface, the navigation and the reducers and effects are set up.  I have a provisional layout working although I will want to migrate this to css flex soon. I also migrated the underlying color choices to variables in a ColorScheme at the root of the project. I generated some sample graphics too so I can integrate these too. 
+I have already put the framework in place for all the pages, the main interface, the navigation and the reducers and effects are set up.  I have a provisional layout working. I also migrated the underlying color choices to variables in a ColorScheme at the root of the project and basic geometry constants to a _geometry style file. I generated some sample graphics too so I can integrate these too. 
 There is already a sqlite database in place and I have set up a simple table to manage logon information.
 
-## Code-wise
+## Coding the fundamental redux loop - 0421 effect
 
-- Connect the login page to the service that will provide authentication through an effect;
-- Have the service respond with success or failure to the reducers;
-- Have the state change on a successful log on reflect back to the header and footer through an observable.
+- The logon ui should have inputs and a submission method.
+- This passes the payload to an effect via action LOGON_ATTEMPT.
+- This should in turn call the authentication service, which needs to ask the database via the storage service for authentication information.  
+- Based on the results of this, the action LOGON_FAILURE or LOGON_SUCCESS is initiated.  Success will adjust the selected user in the store, failure might just show a message and leave the visitor status intact.  Perhaps a failure to authenticate is logged for that ip....
+- The header shows the logged-in user name, so we need to bind it to the store.
+- Then we need to ensure that the store is intialized to the zero-config user.
+- The store itself will first have been initialized to contain the entore user set!  This should be through an effect call to read users, which also returns the defaut user as the selected user (as the initial index is the magic 0).
 
-This will frame out the main functional loops.
 
-## UI-wise
+
+References:
+https://www.youtube.com/watch?v=N_UQx8dPPkc&list=PLW2eQOsUPlWJRfWGOi9gZdc3rE4Fke0Wv
+https://www.youtube.com/watch?v=yU8-mDhawEw
+https://www.youtube.com/watch?v=f97ICOaekNU
+https://www.youtube.com/watch?v=9P5DTlg9oLc
+https://www.youtube.com/watch?v=80Y-JS5EVqQ&list=PLW2eQOsUPlWJRfWGOi9gZdc3rE4Fke0Wv&index=6
+https://www.youtube.com/watch?v=Mwo52v3ajmE&list=PLW2eQOsUPlWJRfWGOi9gZdc3rE4Fke0Wv&index=14
+
+also by the way look at:
+https://www.youtube.com/watch?v=-W_VsLXmjJU
+
+This will frame out the main functional loop:  The rest of the program interactions will be following this pattern or a subset of that so do it carefully!
+
+### actual tasks that were handled:
+
+- in app.module.ts: ```import { FormsModule } from '@angular/forms';```.
+- in logon component, bind the username and password to properties using [(ngModel)]
+- add a click event to the logon button.
+- inject the store in the constructor!
+## UI-wise 
 
 - Refactor the main page so that the main zones resize correctly at most resolutions; <(-- use @medium
-- Apply some simple animations to provide subtle transitios.
+- Apply polyfills and prefixes whereever necessary!
+- Apply some simple animations to provide subtle transitions.
+- Incorporate some icons in suitable places as visual reinforcements
+- APp;y a context tiltle transparently over the main graphic
+
+## Legacy Content- one possibility?
+
+- determine appropriate classing conventions for main body text, pictures, hadings and linkable artifacts;
+- make a drag-and-drop tool to generate source for content-indexed display;
+- We will need to produce basically a list of li's for the main paragraphs, and potentially headings and inserted images.  Another pass through the data should allow the generation of the sidebar contents page,
+- The implication here is that perhaps our best strategy would be to save the content as json objects in the database - it would be relatively easy to generate the objects, insert them in the database and serve them to the UI as a collection.  What we need is a simple convention to simplify execution.
+- The main attributes within items (initially) include:
+  - headings and subheadings (some indexable)  
+  - collections of paragraphs 
+  - float images
+  - full-size images
+  - (links can be included in any of these)
+- Actually if we are storing simply some metadata for structure, linkability and sequencing, and raw html, this can include esoteric class references and image references, which simplifies our consumption, as we can just use an ngfor loop.  (In the actual database we should keep class info or headers/trailers in their own field so we can update "globally").
+- E.g.:
+```json
+{ [
+    { "linkAs": "Midi Routing",
+      "content": "<div class=\"main\">Midi Routing</div>" },
+    {
+      "content": "<p>Now is the time for all good me to come to the aid of the party.</p>"   
+    }
+    {
+      "content": "<img class=\"cc-float-left" src=\"./images/11111\"/>" 
+    }
+
+  ]
+}
+```
+So the utility should allow drag-and drop or copy of text from source documents to generate the appropriate content fragments.  Would be simple to drag-drop onto headings, content and have level adjustable.
+A more advanced interface would allow us to split-and-join paragraphs and manage the content as a tree.  This would allow outline programming.  Perhaps we could also easily import from the html generated by word as export(filtered).
+
+
+# Fix issues with install of MariaDB:
+(crypto not found)
+
+Go to ```\node_modules@angular-devkit\build-angular\src\angular-cli-files\models\webpack-configs\browser.js```
+
+and search for node which would be looking like 
+```node: false```
+
+and replace it with
+
+```json
+   node: {
+            crypto: true,
+            stream: true,
+            fs: 'empty',
+            net: 'empty',
+            tls: 'empty'
+        },
+```

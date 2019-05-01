@@ -5,11 +5,28 @@
     "version": "0.2.0",
     "configurations": [
         {
+            "name": "Chrome",
             "type": "chrome",
             "request": "launch",
-            "name": "Launch Chrome against localhost",
             "url": "http://localhost:4200",
             "webRoot": "${workspaceFolder}"
+        },
+        {
+            "name": "Chrome MyCodeOnly",
+            "type": "chrome",
+            "request": "launch",
+            "url": "http://localhost:4200/advisor",
+            "webRoot": "${workspaceFolder}/",
+            "skipFiles": [
+               "!/src/**",
+                "<node_internals>/**",
+                "${workspaceFolder}/node_modules/**",
+                "${workspaceFolder}/e2e/**",
+                "/node_modules/**",
+                "/e2e/**",
+            ],
+            "sourceMaps": true,
+            "trace": true
         }
     ]
 }
