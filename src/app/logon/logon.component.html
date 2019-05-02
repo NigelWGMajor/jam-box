@@ -11,7 +11,7 @@
         <input class="jb-field-password" [(ngModel)]="password" type="password" name="Password"> 
       </div>
     </div>
-    <button class="jb-action-button" (click)="tryLogOn($event)" >Whatever</button>
+    <button class="jb-action-button" (click)="tryLogOn($event)" >Log in player</button>
       </div>
    <div *ngFor="let user of users$ | async">
      {{ user.displayName }}

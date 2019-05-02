@@ -10,12 +10,12 @@ export const userReducers = (
   action: UserActions
 ): IUserState => {
   switch (action.type) {
-    case UserActionTypes.LogOnUser: { // //!  move to effect
-      return {
-        // this will actually be altered and moved to an effect to interact with the database...
-        users: state.users, selectedUser: action.payload
-      };
-    }
+   // case UserActionTypes.LogOnUser: { // //!  move to effect
+   //   return {
+   //     // this will actually be altered and moved to an effect to interact with the database...
+   //     users: state.users, selectedUser: action.payload
+   //   };
+   // }
     case UserActionTypes.LogOnUserSuccess: {
       return {
         users: state.users, selectedUser: action.payload
@@ -29,6 +29,11 @@ export const userReducers = (
       return {
         users: action.payload, selectedUser: action.payload[0]};
     }
+    // case UserActionTypes.LogOnUser: {
+    //   return {
+    //     users: state.users, selectedUser: action.payload
+    //   }
+    // }
     default:
       return state;
   }

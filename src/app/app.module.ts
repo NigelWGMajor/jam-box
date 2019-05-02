@@ -26,6 +26,7 @@ import { LogonComponent } from './logon/logon.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { appReducers } from './app.reducer';
+import { StorageService } from './storage.service';
 
 
 @NgModule({
@@ -57,7 +58,7 @@ import { appReducers } from './app.reducer';
     MatSidenavModule,
     FormsModule
   ],
-  providers: [],
+  providers: [StorageService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

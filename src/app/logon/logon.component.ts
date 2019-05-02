@@ -4,6 +4,9 @@ import { Store, select } from '@ngrx/store';
 import { Observable } from 'rxjs';
 
 import { IUserState } from '../store/state/user.state';
+import { store } from '@angular/core/src/render3';
+import { dispatch } from 'rxjs/internal/observable/pairs';
+import { UserActionTypes, LogOnUser } from '../store/actions/user.actions';
 
 
 @Component({
@@ -29,9 +32,8 @@ export class LogonComponent implements OnInit {
   }
 
   tryLogOn(event) {
-   // debugger;
     // todo: grab the password and user name and send them to the LogOnUser effect.
-
-
-  }
+    //debugger;
+    this.store.dispatch(new LogOnUser({ name: this.userName, password: this.password, id: 0 }));
+   }
 }

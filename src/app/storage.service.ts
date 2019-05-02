@@ -3,8 +3,8 @@ import { mariadb } from 'mariadb';
 /*
 const mariadb = require('mariadb');
 const pool = mariadb.createPool({
-     host: 'mydb.com', 
-     user:'myUser', 
+     host: 'mydb.com',
+     user:'myUser',
      password: 'myPassword',
      connectionLimit: 5
 });
@@ -28,13 +28,18 @@ async function asyncFunction() {
 */
 
 import { IUser } from './models/user.interface';
+import { CompileShallowModuleMetadata } from '@angular/compiler';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class StorageService implements OnInit, OnDestroy {
+  logOn(payload: any): any {
+    throw new Error("Method not implemented.");
+  }
   getAllUsers() {
-    //throw new Error("Method not implemented.");
+    return new Observable<IUser>();
   }
 
 

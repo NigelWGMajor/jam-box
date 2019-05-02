@@ -23,7 +23,7 @@ export class LogOnUserFailure implements Action {
 }
 export class LoadUsers implements Action {
   readonly type = UserActionTypes.LoadUsers;
-  constructor() {}
+  constructor(public payload: IUser) {}
 }
 export class LoadUsersSuccess implements Action {
   readonly type = UserActionTypes.LoadUsersSuccess;
