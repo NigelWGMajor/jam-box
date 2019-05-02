@@ -16,8 +16,7 @@ export class UserEffects {
           catchError(() => EMPTY)
         )),
       ofType('[User] Log On'),
-      mergeMap((payload)=> this.userService.logOn(payload))
-
+      mergeMap((payload) => this.userService.logOn(payload))
     );
 
   constructor(
