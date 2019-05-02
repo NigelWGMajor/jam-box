@@ -36,7 +36,7 @@ import { Observable } from 'rxjs';
 })
 export class StorageService implements OnInit, OnDestroy {
   logOn(payload: any): any {
-    throw new Error("Method not implemented.");
+    throw new Error('Method not implemented.');
   }
   getAllUsers() {
     return new Observable<IUser>();
