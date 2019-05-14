@@ -29,7 +29,16 @@ import { async } from 'rxjs/internal/scheduler/async';
   providedIn: 'root'
 })
 export class StorageService implements OnInit, OnDestroy {
-  constructor() { }
+  constructor() { 
+    
+  }
+   pool = mariadb.createPool({
+    host: 'mariaDB',
+    user: 'root',
+    password: 'N1xR00T',
+    connectionLimit: 5
+  });
+
 
   async xeqLogOn (userName: string, password: string) {
       let conn;
@@ -54,12 +63,7 @@ export class StorageService implements OnInit, OnDestroy {
 
   // lifecycle:
   ngOnInit() {
-    const pool = mariadb.createPool({
-      host: 'mariaDB',
-      user: 'root',
-      password: 'N1xR00T',
-      connectionLimit: 5
-    });
+   
   }
 
   ngOnDestroy() {
