@@ -7,7 +7,8 @@ export enum UserActionTypes {
   LogOnUserSuccess = '[User] Log On Success',
   LogOnUserFailure = '[User] Log On Failure',
   LoadUsers = '[User] Load Users',
-  LoadUsersSuccess = '[User] Load Users Success'
+  LoadUsersSuccess = '[User] Load Users Success',
+  LoadUsersFailure = '[User] Load Users Failure'
 }
 export class LogOnUser implements Action {
   readonly type = UserActionTypes.LogOnUser;
@@ -29,9 +30,14 @@ export class LoadUsersSuccess implements Action {
   readonly type = UserActionTypes.LoadUsersSuccess;
   constructor(public payload: IUser[]) {}
 }
+export class LoadUsersFailure implements Action {
+    readonly type = UserActionTypes.LoadUsersFailure;
+    constructor(public payload: IUser[]) {}
+}
 export type UserActions =
 | LogOnUser
 | LogOnUserSuccess
 | LogOnUserFailure
 | LoadUsers
-| LoadUsersSuccess;
+| LoadUsersSuccess
+| LoadUsersFailure;

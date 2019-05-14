@@ -1,8 +1,11 @@
 import { Injectable } from '@angular/core';
 import { Actions, Effect, ofType } from '@ngrx/effects';
+//import { EMPTY } from 'rxjs';
+import { map, mergeMap, switchMap, catchError } from 'rxjs/operators';
+import * as fromServices from '../../storage.service';
+import { UserActions } from '../actions/user.actions';
 import { EMPTY } from 'rxjs';
-import { map, mergeMap, catchError } from 'rxjs/operators';
-import { StorageService } from '../../storage.service';
+
 
 // //! reference the user actions and replace the text-types with enum types.
 // //! chain the service results to reducer actions.
@@ -20,15 +23,21 @@ export class UserEffects {
         ))
     );
 
-    @Effect()
-    logonUser$ = this.actions$
+  @Effect()
+  logonUser$ = this.actions$
     .pipe(
       ofType('[User] Log On'),
-      mergeMap((payload) => this.userService.logOn(payload))
+      mergeMap((user) => this.userService.logOn(user)
+        .pipe(
+          map(() => ({ type: '[User] Logon User Success', payload: user })),
+          catchError(() => EMPTY)
+        ))
     );
 
   constructor(
     private actions$: Actions,
-    private userService: StorageService
+    private userService: fromServices.StorageService
   ) { }
+
+
 }

@@ -225,7 +225,7 @@ Make a reducer in the store folder for users to handle user actions that are syn
 Now I want to make a user effect too, as I expect that some user actions will be asynchronous:
 `ng generate effect store/effects/user`
 
-With that in place, it's time to set up a database.
+With that in place, it's time to set up a database.<(--    NO! Skip this db, the dlls clash!
 
 Used sqlite studio to make a Players table with Id, Name, Key and Description. The Key defauts to "1234".
 "Visitor" has an Id of 0, an empty key and the description is "Anonymous Visitor to the site".
@@ -314,17 +314,15 @@ This is done.
 
 Known limitation: the header and footer depths for the mid-zone to avoid are hard-coded.  I'd prefer this to be self-calibrating.
 
-
-
 ## wrong way ... :
 
 I used mat-sidenav for the test contacts page.  This may later later be eliminated by using the new "basic" table structure to get things working properly.  This will come out in the wash a lttle later ...
 
-
-
 # Next:
 
 I have already put the framework in place for all the pages, the main interface, the navigation and the reducers and effects are set up.  I have a provisional layout working. I also migrated the underlying color choices to variables in a ColorScheme at the root of the project and basic geometry constants to a _geometry style file. I generated some sample graphics too so I can integrate these too. 
+
+SKIP THIS --)>
 There is already a sqlite database in place and I have set up a simple table to manage logon information.
 
 ## Coding the fundamental redux loop - 0421 effect
